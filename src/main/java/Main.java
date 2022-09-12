@@ -28,16 +28,13 @@ public class Main {
         int valg;
         do {
             valg = sc.nextInt();
-            switch (valg) {
-                case 1:
-                    isHuman = true;
-                    break;
-                case 2:
-                    isHuman = false;
-                    break;
-                default:
-                    System.out.println("ugyldigt input, prøv igen");
+            if(valg == 1){
+                isHuman = true;
             }
+            else if(valg == 2){
+                isHuman = false;
+            }
+            else System.out.println("Prøv igen");
         } while (valg != 1 || valg != 2);
 
 
