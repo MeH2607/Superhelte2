@@ -1,11 +1,25 @@
 import java.util.Scanner;
 
-public class Main {
-    public static void main(String[] args) {
-//for nu oprettes superhelte i main, senere vil vi lave en database der holder på data
+public class Database {
+    SuperHero[] heroDatabase = new SuperHero[10];
+    int n;
 
-        Scanner sc = new Scanner(System.in);
+    Scanner sc = new Scanner(System.in);
 
+    public Database() {
+        SuperHero[] database = new SuperHero[10];
+        n = 0;
+    }
+
+    public void addToDatabase(String name, String superheroName, String superheroPower, boolean human, int creationYear) {
+        heroDatabase[n] = new SuperHero(name, superheroName, superheroPower, human, creationYear);
+    }
+
+    public void addToDatabase(String name, String superheroPower, boolean human, int creationYear) {
+        heroDatabase[n] = new SuperHero(name, superheroPower, human, creationYear);
+    }
+
+    public void makeAndAddHero() {
         System.out.println("Tilføj en superhelt: ");
 
         System.out.println("\nCivil navn: ");
@@ -32,20 +46,20 @@ public class Main {
             valg = sc.nextInt();
             //
             sc.nextLine();
-            if(valg == 1){
+            if (valg == 1) {
                 isHuman = true;
-            }
-            else if(valg == 2){
+            } else if (valg == 2) {
                 isHuman = false;
-            }
-            else System.out.println("Prøv igen");
+            } else System.out.println("Prøv igen");
         } while (valg != 1 && valg != 2);
 
 
         System.out.println("\nHvornår blev de lavet: ");
         int year = sc.nextInt();
 
+        //Tjekker om de har et superheltenavn og opretter så hero objekter
         if (heroName == null) {
+            addToDatabase(name, heroPower, isHuman, year);
             SuperHero hero = new SuperHero(name, heroPower, isHuman, year);
             System.out.println("Du har tilføjet " + name + " som ikke har et helte navn\n Deres styrke er "
                     + heroPower);
@@ -55,6 +69,7 @@ public class Main {
                 System.out.println("\nDe er ikke et menneske\nDe blev lavet i år " + year);
             }
         } else {
+            addToDatabase(name, heroName, heroPower, isHuman, year);
             SuperHero hero = new SuperHero(name, heroName, heroPower, isHuman, year);
             System.out.println("Du har tilføjet " + name + " også kendt som " + heroName + "\nDeres styrke er "
                     + heroPower);
@@ -64,9 +79,6 @@ public class Main {
                 System.out.println("\nDe er ikke et menneske\nDe blev lavet i år " + year);
             }
         }
-
-
     }
-
-
 }
+

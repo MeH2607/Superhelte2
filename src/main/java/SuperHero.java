@@ -11,7 +11,7 @@ public class SuperHero {
 
     Scanner sc = new Scanner(System.in);
 
-    public SuperHero(String name, String superheroName, String superheroPower,boolean human, int creationYear) {
+    public SuperHero(String name, String superheroName, String superheroPower, boolean human, int creationYear) {
         this.name = name;
         this.superheroName = superheroName;
         this.superheroPower = superheroPower;
