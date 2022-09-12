@@ -50,7 +50,7 @@ public class Database {
                 isHuman = true;
             } else if (valg == 2) {
                 isHuman = false;
-            } else System.out.println("Prøv igen");
+            } else System.out.println("Prøv igen.");
         } while (valg != 1 && valg != 2);
 
 
@@ -60,24 +60,12 @@ public class Database {
         //Tjekker om de har et superheltenavn og opretter så hero objekter
         if (heroName == null) {
             addToDatabase(name, heroPower, isHuman, year);
-            SuperHero hero = new SuperHero(name, heroPower, isHuman, year);
-            System.out.println("Du har tilføjet " + name + " som ikke har et helte navn\n Deres styrke er "
-                    + heroPower);
-            if (isHuman = true) {
-                System.out.println("\nDe er et menneske\nDe blev lavet i år " + year);
-            } else {
-                System.out.println("\nDe er ikke et menneske\nDe blev lavet i år " + year);
-            }
+         //   SuperHero hero = new SuperHero(name, heroPower, isHuman, year);
+            System.out.println("Du har tilføjet " + name + " til databasen.");
         } else {
             addToDatabase(name, heroName, heroPower, isHuman, year);
-            SuperHero hero = new SuperHero(name, heroName, heroPower, isHuman, year);
-            System.out.println("Du har tilføjet " + name + " også kendt som " + heroName + "\nDeres styrke er "
-                    + heroPower);
-            if (isHuman = true) {
-                System.out.println("\nDe er et menneske\nDe blev lavet i år " + year);
-            } else {
-                System.out.println("\nDe er ikke et menneske\nDe blev lavet i år " + year);
-            }
+          //  SuperHero hero = new SuperHero(name, heroName, heroPower, isHuman, year);
+            System.out.println("Du har tilføjet " + name + " også kendt som " + heroName + " til databasen.");
         }
     }
 }
