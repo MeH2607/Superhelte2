@@ -27,6 +27,7 @@ public class Main {
                     break;
                 default:
                     System.out.println("Ugyldigt valg");
+                    break;
             }
         } while (menuValg != 9);
 
