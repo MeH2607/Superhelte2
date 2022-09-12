@@ -44,28 +44,35 @@ public class Database {
             //todo insæt switch istedet
             System.out.println("\nTast 1 for ja\nTast 2 for nej");
             valg = sc.nextInt();
-            sc.nextLine();
-            if (valg == 1) {
-                isHuman = true;
-            } else if (valg == 2) {
-                isHuman = false;
-            } else System.out.println("Prøv igen.");
-        } while (valg != 1 && valg != 2);
+            switch (valg) {
+                case 1:
+                    isHuman = true;
+                    break;
+                case 2:
+                    isHuman = false;
+                    break;
+                default:
+                    System.out.println("ugyldigt input, prøv igen");
+            }
+        }
+            while (valg != 1 && valg != 2);
 
 
-        System.out.println("\nHvornår blev de lavet: ");
-        int year = sc.nextInt();
+            System.out.println("\nHvornår blev de lavet: ");
+            int year = sc.nextInt();
 
-        //Tjekker om de har et superheltenavn og opretter så hero objekter
-        if (heroName == null) {
-            addToDatabase(name, heroPower, isHuman, year);
-         //   SuperHero hero = new SuperHero(name, heroPower, isHuman, year);
-            System.out.println("Du har tilføjet " + name + " til databasen.");
-        } else {
-            addToDatabase(name, heroName, heroPower, isHuman, year);
-          //  SuperHero hero = new SuperHero(name, heroName, heroPower, isHuman, year);
-            System.out.println("Du har tilføjet " + name + " også kendt som " + heroName + " til databasen.");
+            //Tjekker om de har et superheltenavn og opretter så hero objekter
+            if (heroName == null) {
+                addToDatabase(name, heroPower, isHuman, year);
+                //   SuperHero hero = new SuperHero(name, heroPower, isHuman, year);
+                System.out.println("Du har tilføjet " + name + " til databasen.");
+            } else {
+                addToDatabase(name, heroName, heroPower, isHuman, year);
+                //  SuperHero hero = new SuperHero(name, heroName, heroPower, isHuman, year);
+                System.out.println("Du har tilføjet " + name + " også kendt som " + heroName + " til databasen.");
+            }
         }
     }
-}
+
+
 

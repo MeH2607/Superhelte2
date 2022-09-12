@@ -4,7 +4,7 @@ public class Main {
     public static void main(String[] args) {
 //for nu oprettes superhelte i main, senere vil vi lave en database der holder på data
 
-        Scanner sc = new Scanner(System.in);
+       /* Scanner sc = new Scanner(System.in);
 
         System.out.println("Tilføj en superhelt: ");
 
@@ -63,8 +63,7 @@ public class Main {
             } else {
                 System.out.println("\nDe er ikke et menneske\nDe blev lavet i år " + year);
             }
-        }
-
+        }*/
 
     }
 
