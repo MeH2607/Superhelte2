@@ -12,11 +12,21 @@ public class Database {
     }
 
     public void addToDatabase(String name, String superheroName, String superheroPower, boolean human, int creationYear) {
-        heroDatabase[n] = new SuperHero(name, superheroName, superheroPower, human, creationYear);
+        if (n < heroDatabase.length) {
+            heroDatabase[n] = new SuperHero(name, superheroName, superheroPower, human, creationYear);
+            n++;
+        } else {
+            System.out.println("Kan ikke tilføje flere helte");
+        }
     }
 
     public void addToDatabase(String name, String superheroPower, boolean human, int creationYear) {
-        heroDatabase[n] = new SuperHero(name, superheroPower, human, creationYear);
+        if (n < heroDatabase.length) {
+            heroDatabase[n] = new SuperHero(name, superheroPower, human, creationYear);
+            n++;
+        } else {
+            System.out.println("Kan ikke tilføje flere helte");
+        }
     }
 
     public void createAndAddHero() {

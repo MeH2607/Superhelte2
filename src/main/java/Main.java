@@ -4,6 +4,7 @@ public class Main {
     public static void main(String[] args) {
 //for nu oprettes superhelte i main, senere vil vi lave en database der holder på data
 
+
         //TODO lav en menu der opretter en superhelt eller lukker programmet. Loop kommer senere
         Scanner sc = new Scanner(System.in);
 
