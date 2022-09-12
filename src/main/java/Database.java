@@ -1,9 +1,10 @@
 import java.util.Scanner;
+
 public class Database {
     SuperHero[] heroDatabase = new SuperHero[10];
     int n;
 
-    Scanner sc = new Scanner(System.in);
+    Scanner sc;
 
     public Database() {
         SuperHero[] database = new SuperHero[10];
@@ -19,29 +20,30 @@ public class Database {
     }
 
     public void createAndAddHero() {
+        sc = new Scanner(System.in);
         System.out.println("Tilføj en superhelt: ");
+        //I tilfælde af scannerbug
 
-        System.out.println("\nCivil navn: ");
+
+        System.out.println("\nTilføj deres civil navn: ");
         String name = sc.nextLine();
 
-
-        System.out.println("\nHar de et heltenavn? 1 for ja, 0 for nej");
+        System.out.println("\nHar de et heltenavn?\n1. ja\n0. nej");
         int svar = sc.nextInt();
         sc.nextLine();
         String heroName = null;
         if (svar == 1) {
-            System.out.println("\nTilføj heltenavn: ");
+            System.out.println("\nTilføj deres heltenavn: ");
             heroName = sc.nextLine();
         }
 
-        System.out.println("\nTilføj superstyrke: ");
+        System.out.println("\nTilføj deres superstyrke: ");
         String heroPower = sc.nextLine();
 
         System.out.println("\nEr de et menneske?");
         boolean isHuman = true;
         int valg2;
         do {
-            //todo insæt switch istedet
             System.out.println("\nTast 1 for ja\nTast 2 for nej");
             valg2 = sc.nextInt();
             switch (valg2) {
@@ -55,24 +57,26 @@ public class Database {
                     System.out.println("ugyldigt input, prøv igen");
             }
         }
-            while (valg2 != 1 && valg2 != 2);
+        while (valg2 != 1 && valg2 != 2);
 
+        //Scannerbug
+        sc.nextLine();
 
-            System.out.println("\nHvornår blev de lavet: ");
-            int year = sc.nextInt();
+        System.out.println("\nHvornår blev de lavet: ");
+        int year = sc.nextInt();
 
-            //Tjekker om de har et superheltenavn og opretter så hero objekter
-            if (heroName == null) {
-                addToDatabase(name, heroPower, isHuman, year);
-                //   SuperHero hero = new SuperHero(name, heroPower, isHuman, year);
-                System.out.println("\nDu har tilføjet " + name + " til databasen.");
-            } else {
-                addToDatabase(name, heroName, heroPower, isHuman, year);
-                //  SuperHero hero = new SuperHero(name, heroName, heroPower, isHuman, year);
-                System.out.println("\nDu har tilføjet " + name + " også kendt som " + heroName + " til databasen.");
-            }
+        //Tjekker om de har et superheltenavn og opretter så hero objekter
+        if (heroName == null) {
+            addToDatabase(name, heroPower, isHuman, year);
+            //   SuperHero hero = new SuperHero(name, heroPower, isHuman, year);
+            System.out.println("\nDu har tilføjet " + name + " til databasen.\n");
+        } else {
+            addToDatabase(name, heroName, heroPower, isHuman, year);
+            //  SuperHero hero = new SuperHero(name, heroName, heroPower, isHuman, year);
+            System.out.println("\nDu har tilføjet " + name + " også kendt som " + heroName + " til databasen.\n");
         }
     }
+}
 
 
 
