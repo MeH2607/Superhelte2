@@ -23,11 +23,15 @@ public class Main {
         System.out.println("\nTilføj superstyrke: ");
         String heroPower = sc.nextLine();
 
-        System.out.println("Er de et menneske?\nTast 1 for ja\nTast 2 for nej ");
-        Boolean isHuman = null;
+        System.out.println("\nEr de et menneske?");
+        boolean isHuman = true;
         int valg;
         do {
+            //todo insæt switch istedet
+            System.out.println("\nTast 1 for ja\nTast 2 for nej");
             valg = sc.nextInt();
+            //
+            sc.nextLine();
             if(valg == 1){
                 isHuman = true;
             }
@@ -35,7 +39,7 @@ public class Main {
                 isHuman = false;
             }
             else System.out.println("Prøv igen");
-        } while (valg != 1 || valg != 2);
+        } while (valg != 1 && valg != 2);
 
 
         System.out.println("\nHvornår blev de lavet: ");
@@ -52,7 +56,7 @@ public class Main {
             }
         } else {
             SuperHero hero = new SuperHero(name, heroName, heroPower, isHuman, year);
-            System.out.println("Du har tilføjet " + name + " også kendt som " + heroName + "\n Deres styrke er "
+            System.out.println("Du har tilføjet " + name + " også kendt som " + heroName + "\nDeres styrke er "
                     + heroPower);
             if (isHuman = true) {
                 System.out.println("\nDe er et menneske\nDe blev lavet i år " + year);
