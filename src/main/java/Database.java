@@ -1,5 +1,4 @@
 import java.util.Scanner;
-
 public class Database {
     SuperHero[] heroDatabase = new SuperHero[10];
     int n;
@@ -19,7 +18,7 @@ public class Database {
         heroDatabase[n] = new SuperHero(name, superheroPower, human, creationYear);
     }
 
-    public void makeAndAddHero() {
+    public void createAndAddHero() {
         System.out.println("Tilføj en superhelt: ");
 
         System.out.println("\nCivil navn: ");
@@ -34,17 +33,18 @@ public class Database {
             System.out.println("\nTilføj heltenavn: ");
             heroName = sc.nextLine();
         }
+
         System.out.println("\nTilføj superstyrke: ");
         String heroPower = sc.nextLine();
 
         System.out.println("\nEr de et menneske?");
         boolean isHuman = true;
-        int valg;
+        int valg2;
         do {
             //todo insæt switch istedet
             System.out.println("\nTast 1 for ja\nTast 2 for nej");
-            valg = sc.nextInt();
-            switch (valg) {
+            valg2 = sc.nextInt();
+            switch (valg2) {
                 case 1:
                     isHuman = true;
                     break;
@@ -55,7 +55,7 @@ public class Database {
                     System.out.println("ugyldigt input, prøv igen");
             }
         }
-            while (valg != 1 && valg != 2);
+            while (valg2 != 1 && valg2 != 2);
 
 
             System.out.println("\nHvornår blev de lavet: ");
@@ -65,11 +65,11 @@ public class Database {
             if (heroName == null) {
                 addToDatabase(name, heroPower, isHuman, year);
                 //   SuperHero hero = new SuperHero(name, heroPower, isHuman, year);
-                System.out.println("Du har tilføjet " + name + " til databasen.");
+                System.out.println("\nDu har tilføjet " + name + " til databasen.");
             } else {
                 addToDatabase(name, heroName, heroPower, isHuman, year);
                 //  SuperHero hero = new SuperHero(name, heroName, heroPower, isHuman, year);
-                System.out.println("Du har tilføjet " + name + " også kendt som " + heroName + " til databasen.");
+                System.out.println("\nDu har tilføjet " + name + " også kendt som " + heroName + " til databasen.");
             }
         }
     }

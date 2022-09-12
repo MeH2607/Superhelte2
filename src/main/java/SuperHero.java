@@ -6,10 +6,7 @@ public class SuperHero {
     private String superheroName;
     private String superheroPower;
     private int creationYear;
-
     public boolean human;
-
-    Scanner sc = new Scanner(System.in);
 
     public SuperHero(String name, String superheroName, String superheroPower, boolean human, int creationYear) {
         this.name = name;

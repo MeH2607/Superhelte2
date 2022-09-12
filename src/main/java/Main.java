@@ -4,9 +4,9 @@ public class Main {
     public static void main(String[] args) {
 //for nu oprettes superhelte i main, senere vil vi lave en database der holder på data
 
-       /* Scanner sc = new Scanner(System.in);
+       Scanner sc = new Scanner(System.in);
 
-        System.out.println("Tilføj en superhelt: ");
+       /*  System.out.println("Tilføj en superhelt: ");
 
         System.out.println("\nCivil navn: ");
         String name = sc.nextLine();
@@ -65,7 +65,9 @@ public class Main {
             }
         }*/
 
+        Database database = new Database();
+        database.createAndAddHero();
+
+
     }
-
-
 }
