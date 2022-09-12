@@ -24,9 +24,10 @@ public class Main {
         String heroPower = sc.nextLine();
 
         System.out.println("Er de et menneske?\nTast 1 for ja\nTast 2 for nej ");
-        int valg = sc.nextInt();
         Boolean isHuman = null;
-        while (valg != 1 || valg != 2) {
+        int valg;
+        do {
+            valg = sc.nextInt();
             switch (valg) {
                 case 1:
                     isHuman = true;
@@ -37,31 +38,30 @@ public class Main {
                 default:
                     System.out.println("ugyldigt input, prøv igen");
             }
-        }
+        } while (valg != 1 || valg != 2);
+
 
         System.out.println("\nHvornår blev de lavet: ");
         int year = sc.nextInt();
 
         if (heroName == null) {
-            SuperHero hero = new SuperHero(name, heroPower,isHuman, year);
+            SuperHero hero = new SuperHero(name, heroPower, isHuman, year);
             System.out.println("Du har tilføjet " + name + " som ikke har et helte navn\n Deres styrke er "
-                    + heroPower );
-            if (isHuman = true){
+                    + heroPower);
+            if (isHuman = true) {
                 System.out.println("\nDe er et menneske\nDe blev lavet i år " + year);
-            }
-            else{
+            } else {
                 System.out.println("\nDe er ikke et menneske\nDe blev lavet i år " + year);
             }
         } else {
-            SuperHero hero = new SuperHero(name, heroName, heroPower,isHuman, year);
+            SuperHero hero = new SuperHero(name, heroName, heroPower, isHuman, year);
             System.out.println("Du har tilføjet " + name + " også kendt som " + heroName + "\n Deres styrke er "
-                    + heroPower );
-            if (isHuman = true){
+                    + heroPower);
+            if (isHuman = true) {
                 System.out.println("\nDe er et menneske\nDe blev lavet i år " + year);
-            }
-            else{
+            } else {
                 System.out.println("\nDe er ikke et menneske\nDe blev lavet i år " + year);
-            };
+            }
         }
 
 
