@@ -1,28 +1,37 @@
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Database {
-    SuperHero[] heroDatabase = new SuperHero[10];
+    ArrayList<SuperHero> heroDatabase = new ArrayList<>();
     int n;
 
     Scanner sc;
 
     public Database() {
-        SuperHero[] database = new SuperHero[10];
+        ArrayList<SuperHero> heroList = new ArrayList<>();
         n = 0;
     }
 
+    public ArrayList<SuperHero> getHeroDatabase() {
+        return heroDatabase;
+    }
+
+    public void setHeroDatabase(ArrayList<SuperHero> heroDatabase) {
+        this.heroDatabase = heroDatabase;
+    }
+
     public void addToDatabase(String name, String superheroName, String superheroPower, boolean human, int creationYear) {
-            heroDatabase[n] = new SuperHero(name, superheroName, superheroPower, human, creationYear);
+            heroDatabase.add(new SuperHero(name, superheroName, superheroPower, human, creationYear));
             n++;
     }
 
     public void addToDatabase(String name, String superheroPower, boolean human, int creationYear) {
-            heroDatabase[n] = new SuperHero(name, superheroPower, human, creationYear);
+            heroDatabase.add(new SuperHero(name, superheroPower, human, creationYear));
             n++;
     }
 
     public void createAndAddHero() {
-        if(n>heroDatabase.length){
+        if(n>heroDatabase.size()){
             System.out.println("Kan ikke tilføje flere helte");
         }
         else {

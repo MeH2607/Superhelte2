@@ -21,9 +21,11 @@ public class Main {
             switch (menuValg) {
                 case 1:
                     database.createAndAddHero();
+                    System.out.println(database.getHeroDatabase().size());
                     break;
                 case 9:
                     System.out.println("\nPå gensyn");
+                    System.exit(0);
                     break;
                 default:
                     System.out.println("Ugyldigt valg");
