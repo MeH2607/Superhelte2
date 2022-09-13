@@ -23,6 +23,10 @@ public class Main {
                     database.createAndAddHero();
                     System.out.println(database.getHeroDatabase().size());
                     break;
+                case 2:
+                    for(SuperHero heroes : database.getHeroDatabase())
+                        System.out.println("Civilnavn : " + heroes.getName() + "\nHeltenavn: " + heroes.getSuperheroName()
+                        + "\n");
                 case 9:
                     System.out.println("\nPå gensyn");
                     System.exit(0);
