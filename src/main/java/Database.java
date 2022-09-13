@@ -3,38 +3,26 @@ import java.util.Scanner;
 
 public class Database {
     ArrayList<SuperHero> heroDatabase = new ArrayList<>();
-    int n;
 
     Scanner sc;
 
     public Database() {
         ArrayList<SuperHero> heroList = new ArrayList<>();
-        n = 0;
     }
 
     public ArrayList<SuperHero> getHeroDatabase() {
         return heroDatabase;
     }
 
-    public void setHeroDatabase(ArrayList<SuperHero> heroDatabase) {
-        this.heroDatabase = heroDatabase;
-    }
-
     public void addToDatabase(String name, String superheroName, String superheroPower, boolean human, int creationYear) {
             heroDatabase.add(new SuperHero(name, superheroName, superheroPower, human, creationYear));
-            n++;
     }
 
     public void addToDatabase(String name, String superheroPower, boolean human, int creationYear) {
             heroDatabase.add(new SuperHero(name, superheroPower, human, creationYear));
-            n++;
     }
 
     public void createAndAddHero() {
-        if(n>heroDatabase.size()){
-            System.out.println("Kan ikke tilføje flere helte");
-        }
-        else {
             sc = new Scanner(System.in);
             System.out.println("Tilføj en superhelt: ");
             //I tilfælde af scannerbug
@@ -92,7 +80,7 @@ public class Database {
             }
         }
     }
-}
+
 
 
 
