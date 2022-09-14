@@ -15,12 +15,10 @@ public class Main {
         do {
             System.out.println("Hvad vil du gøre?\n1. Opret superhelt\n2. Vis alle helte\n3. Søg på helte\n9. afslut");
             menuValg = sc.nextInt();
-            //Nextline for at forhindre scanner bug
             sc.nextLine();
             switch (menuValg) {
                 case 1:
                     database.createAndAddHero();
-                    System.out.println(database.getHeroDatabase().size());
                     break;
                 case 2:
                     for (SuperHero heroes : database.getHeroDatabase()) {
@@ -38,6 +36,7 @@ public class Main {
                     System.out.println("Søg på et helts civil navn: ");
                     String searchName = sc.nextLine();
                     database.searchOfHero(searchName);
+                    break;
                 case 9:
                     System.out.println("\nPå gensyn");
                     System.exit(0);

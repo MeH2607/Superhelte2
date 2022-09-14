@@ -1,8 +1,17 @@
+import javax.xml.crypto.Data;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class Database {
-    ArrayList<SuperHero> heroDatabase = new ArrayList<>();
+   // ArrayList<SuperHero> heroDatabase = new ArrayList<>();
+
+    SuperHero s1 = new SuperHero("Clark kent", "Superman", "Super styrke",false,1925);
+    SuperHero s2 = new SuperHero("Bruce Wayne", "Batman", "money", true, 1939);
+    SuperHero s3 = new SuperHero("Johnny", "Cool as fuck",true, 2000);
+    SuperHero s4 = new SuperHero("Saitama", "Super strength", true, 2009);
+
+    ArrayList<SuperHero> heroDatabase = new ArrayList<>(Arrays.asList(s1,s2,s3,s4));
 
     Scanner sc;
 
@@ -84,7 +93,7 @@ public class Database {
     public void searchOfHero(String searchName){
         Boolean find = false;
         for (SuperHero hero : heroDatabase){
-            if(hero.getName().contains(searchName)){
+            if(hero.getName().toLowerCase().contains(searchName.toLowerCase()) || hero.getSuperheroName().toLowerCase().contains(searchName.toLowerCase())){
                 System.out.println("Civilnavn : " + hero.getName() + "\n\nHeltenavn: " + hero.getSuperheroName() + "\n");
                 if (hero.isHuman() == true) {
                     System.out.println("\nMenneske?: Ja");
@@ -95,13 +104,13 @@ public class Database {
                 System.out.println("\nOprindelsesår: " + hero.getCreationYear() + "\n");
                 find = true;
             }
-            }
+        }
         if(!find){
-            System.out.println("Kan ikke finde helte med " + searchName + " i navnet.");
+            System.out.println("Kan ikke finde helte med " + searchName + " i navnet.\n");
         }
-        }
-
     }
+
+}
 
 
 
