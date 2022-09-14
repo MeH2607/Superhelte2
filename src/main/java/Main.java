@@ -22,14 +22,19 @@ public class Main {
                     break;
                 case 2:
                     for (SuperHero heroes : database.getHeroDatabase()) {
-                        System.out.println("Civilnavn : " + heroes.getName() + "\n\nHeltenavn: " + heroes.getSuperheroName() + "\n");
+                        System.out.println("Civilnavn : " + heroes.getName());
+                        if (heroes.getSuperheroName() == null) {
+                            System.out.println("\nIntet heltenavn");
+                        } else {
+                            System.out.println("Superheltenavn: " + heroes.getSuperheroName());
+                        }
                         if (heroes.isHuman() == true) {
                             System.out.println("\nMenneske?: Ja");
                         } else {
                             System.out.println("\nMenneske?: Nej");
                         }
                         System.out.println("\nSuperstyrke: " + heroes.getSuperheroPower());
-                        System.out.println("\nOprindelsesår: " + heroes.getCreationYear() + "\n");
+                        System.out.println("\nOprindelsesår: " + heroes.getCreationYear() + "\n\n");
                     }
                     break;
                 case 3:
@@ -46,6 +51,5 @@ public class Main {
                     break;
             }
         } while (menuValg != 9);
-
     }
 }
