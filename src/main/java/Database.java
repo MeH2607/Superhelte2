@@ -93,7 +93,24 @@ public class Database {
     public void searchOfHero(String searchName){
         Boolean find = false;
         for (SuperHero hero : heroDatabase){
-            if(hero.getName().toLowerCase().contains(searchName.toLowerCase()) || hero.getSuperheroName().contains(searchName.toLowerCase())){
+            if(hero.getName().toLowerCase().contains(searchName.toLowerCase())){
+                System.out.println("Civilnavn : " + hero.getName());
+                if(hero.getSuperheroName() == null){
+                    System.out.println("\nIntet heltenavn");
+                }
+                else{
+                    System.out.println("Superheltenavn: " + hero.getSuperheroName());
+                }
+                if (hero.isHuman() == true) {
+                    System.out.println("\nMenneske?: Ja");
+                } else {
+                    System.out.println("\nMenneske?: Nej");
+                }
+                System.out.println("\nSuperstyrke: " + hero.getSuperheroPower());
+                System.out.println("\nOprindelsesår: " + hero.getCreationYear() + "\n");
+                find = true;
+            }
+            else if(hero.getSuperheroName() != null && hero.getSuperheroName().contains(searchName.toLowerCase())){
                 System.out.println("Civilnavn : " + hero.getName());
                 if(hero.getSuperheroName() == null){
                     System.out.println("\nIntet heltenavn");
