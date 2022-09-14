@@ -5,7 +5,6 @@ public class Main {
 //for nu oprettes superhelte i main, senere vil vi lave en database der holder på data
 
 
-        //TODO lav en menu der opretter en superhelt eller lukker programmet. Loop kommer senere
         Scanner sc = new Scanner(System.in);
 
         Database database = new Database();
@@ -14,7 +13,7 @@ public class Main {
 
         System.out.println("Velkommen til Superhelte databasen\n");
         do {
-            System.out.println("Hvad vil du gøre?\n1. Opret superhelt\n2. Vis alle helte\n9. afslut");
+            System.out.println("Hvad vil du gøre?\n1. Opret superhelt\n2. Vis alle helte\n3. Søg på helte\n9. afslut");
             menuValg = sc.nextInt();
             //Nextline for at forhindre scanner bug
             sc.nextLine();
@@ -35,6 +34,10 @@ public class Main {
                         System.out.println("\nOprindelsesår: " + heroes.getCreationYear() + "\n");
                     }
                     break;
+                case 3:
+                    System.out.println("Søg på et helts civil navn: ");
+                    String searchName = sc.nextLine();
+                    database.searchOfHero(searchName);
                 case 9:
                     System.out.println("\nPå gensyn");
                     System.exit(0);

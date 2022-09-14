@@ -79,6 +79,28 @@ public class Database {
                 System.out.println("\nDu har tilføjet " + name + " også kendt som " + heroName + " til databasen.\n");
             }
         }
+
+
+    public void searchOfHero(String searchName){
+        Boolean find = false;
+        for (SuperHero hero : heroDatabase){
+            if(hero.getName().contains(searchName)){
+                System.out.println("Civilnavn : " + hero.getName() + "\n\nHeltenavn: " + hero.getSuperheroName() + "\n");
+                if (hero.isHuman() == true) {
+                    System.out.println("\nMenneske?: Ja");
+                } else {
+                    System.out.println("\nMenneske?: Nej");
+                }
+                System.out.println("\nSuperstyrke: " + hero.getSuperheroPower());
+                System.out.println("\nOprindelsesår: " + hero.getCreationYear() + "\n");
+                find = true;
+            }
+            }
+        if(!find){
+            System.out.println("Kan ikke finde helte med " + searchName + " i navnet.");
+        }
+        }
+
     }
 
 
