@@ -1,11 +1,11 @@
 import javax.xml.crypto.Data;
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class UserInterface {
 
     private Database database = new Database();
     Scanner sc;
-
 
 
     public void startProgram() {
@@ -31,7 +31,7 @@ public class UserInterface {
                     showAllHeroes();
                     break;
                 case 3:
-                    findHero();
+                    findHeroList();
                     break;
                 case 9:
                     System.out.println("\nPå gensyn");
@@ -129,6 +129,31 @@ public class UserInterface {
         SuperHero hero;
 
         //for (SuperHero hero : database.getHeroDatabase()){
+        hero = database.searchForHero(name);
+        if (hero != null) {
+            System.out.println("Civilnavn : " + hero.getName());
+            if (hero.getSuperheroName() == null) {
+                System.out.println("\nIntet heltenavn");
+            } else {
+                System.out.println("\nSuperheltenavn: " + hero.getSuperheroName());
+            }
+            if (hero.isHuman() == true) {
+                System.out.println("\nMenneske?: Ja");
+            } else {
+                System.out.println("\nMenneske?: Nej");
+            }
+            System.out.println("\nSuperstyrke: " + hero.getSuperheroPower());
+            System.out.println("\nOprindelsesår: " + hero.getCreationYear() + "\n\n");
+        }
+        // }
+
+    }
+//TODO troubleshoot denne metode
+    private void findHeroList() {
+        String name;
+        System.out.println("Søg efter Superhelt ");
+        name = sc.next();
+        for (SuperHero hero : database.searchForHeroList(name)) {
             hero = database.searchForHero(name);
             if (hero != null) {
                 System.out.println("Civilnavn : " + hero.getName());
@@ -145,8 +170,9 @@ public class UserInterface {
                 System.out.println("\nSuperstyrke: " + hero.getSuperheroPower());
                 System.out.println("\nOprindelsesår: " + hero.getCreationYear() + "\n\n");
             }
-   // }
+            // }
 
+        }
     }
 }
 

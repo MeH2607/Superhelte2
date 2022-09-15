@@ -13,12 +13,13 @@ public class Database {
 
     ArrayList<SuperHero> heroDatabase = new ArrayList<>(Arrays.asList(s1,s2,s3,s4));
 
-    ArrayList<SuperHero>findSuperheroList;
+    ArrayList<SuperHero>findSuperheroList = new ArrayList<>();
 
     Scanner sc;
 
     public Database() {
         ArrayList<SuperHero> heroDatabase;
+
     }
 
     public ArrayList<SuperHero> getHeroDatabase() {
@@ -93,6 +94,7 @@ public class Database {
 
 
     public SuperHero searchForHero(String searchName){
+        findSuperheroList = new ArrayList<>();
         for (SuperHero hero : heroDatabase){
             //to if løkker hvis man vil søge via superheltenavn og almindelig navn
             if(hero.getName().toLowerCase().contains(searchName.toLowerCase())){
@@ -112,6 +114,7 @@ public class Database {
         for (SuperHero hero : heroDatabase){
             if(hero.getName().toLowerCase().contains(searchName.toLowerCase())){
                 findSuperheroList.add(hero);
+
             }
             else if(hero.getSuperheroName() != null && hero.getSuperheroName().contains(searchName.toLowerCase())){
                 findSuperheroList.add(hero);
