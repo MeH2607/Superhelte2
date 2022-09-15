@@ -117,7 +117,7 @@ public class Database {
                 findSuperheroList.add(hero);
             }
         }
-        return findSuperheroList;
+        return null;
     }
 
 }

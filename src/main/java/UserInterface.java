@@ -126,8 +126,9 @@ public class UserInterface {
         String name;
         System.out.println("Søg efter Superhelt ");
         name = sc.next();
+        SuperHero hero;
 
-        for (SuperHero hero : database.getHeroDatabase()){
+        //for (SuperHero hero : database.getHeroDatabase()){
             hero = database.searchForHero(name);
             if (hero != null) {
                 System.out.println("Civilnavn : " + hero.getName());
@@ -144,7 +145,7 @@ public class UserInterface {
                 System.out.println("\nSuperstyrke: " + hero.getSuperheroPower());
                 System.out.println("\nOprindelsesår: " + hero.getCreationYear() + "\n\n");
             }
-    }
+   // }
 
     }
 }
