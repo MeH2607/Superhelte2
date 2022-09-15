@@ -18,7 +18,7 @@ public class Database {
     Scanner sc;
 
     public Database() {
-        ArrayList<SuperHero> heroList = new ArrayList<>();
+        ArrayList<SuperHero> heroDatabase;
     }
 
     public ArrayList<SuperHero> getHeroDatabase() {
@@ -33,7 +33,7 @@ public class Database {
             heroDatabase.add(new SuperHero(name, superheroPower, human, creationYear));
     }
 
-    public void createAndAddHero() { //TODO lav denne kode om til ikke at printe, kun tilføje. Meget simpel metode
+/*    public SuperHero createAndAddHero(String name, String superheroName, String superheroPower, boolean human, int creationYear) { //TODO lav denne kode om til ikke at printe, kun tilføje. Meget simpel metode
             sc = new Scanner(System.in);
             System.out.println("Tilføj en superhelt: ");
             //I tilfælde af scannerbug
@@ -89,7 +89,7 @@ public class Database {
                 //  SuperHero hero = new SuperHero(name, heroName, heroPower, isHuman, year);
                 System.out.println("\nDu har tilføjet " + name + " også kendt som " + heroName + " til databasen.\n");
             }
-        }
+        }*/
 
 
     public SuperHero searchForHero(String searchName){
@@ -107,7 +107,7 @@ public class Database {
         return null;
     }
 
-    //Samler en gruppe af helte, når man skal gemme resultater
+    //Samler en gruppe af helte, når man skal gemme resultater. Bruges til når der skal redigeres.
     public ArrayList<SuperHero> searchForHeroList(String searchName){
         for (SuperHero hero : heroDatabase){
             if(hero.getName().toLowerCase().contains(searchName.toLowerCase())){
