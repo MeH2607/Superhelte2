@@ -13,6 +13,8 @@ public class Database {
 
     ArrayList<SuperHero> heroDatabase = new ArrayList<>(Arrays.asList(s1,s2,s3,s4));
 
+    ArrayList<SuperHero>findSuperheroList;
+
     Scanner sc;
 
     public Database() {
@@ -31,7 +33,7 @@ public class Database {
             heroDatabase.add(new SuperHero(name, superheroPower, human, creationYear));
     }
 
-    public void createAndAddHero() {
+    public void createAndAddHero() { //TODO lav denne kode om til ikke at printe, kun tilføje. Meget simpel metode
             sc = new Scanner(System.in);
             System.out.println("Tilføj en superhelt: ");
             //I tilfælde af scannerbug
@@ -90,48 +92,34 @@ public class Database {
         }
 
 
-    public void searchOfHero(String searchName){
-        Boolean find = false;
+    public SuperHero searchForHero(String searchName){
+        for (SuperHero hero : heroDatabase){
+            //to if løkker hvis man vil søge via superheltenavn og almindelig navn
+            if(hero.getName().toLowerCase().contains(searchName.toLowerCase())){
+                return hero;
+            }
+            //Første del i tilfælde af at superheroName er null og så ikke prøver at gøre null lowercase og crash
+            else if(hero.getSuperheroName() != null && hero.getSuperheroName().contains(searchName.toLowerCase())){
+                return hero;
+            }
+        }
+        System.out.println("Kunne ikke finde " + searchName);
+        return null;
+    }
+
+    //Samler en gruppe af helte, når man skal gemme resultater
+    public ArrayList<SuperHero> searchForHeroList(String searchName){
         for (SuperHero hero : heroDatabase){
             if(hero.getName().toLowerCase().contains(searchName.toLowerCase())){
-                System.out.println("Civilnavn : " + hero.getName());
-                if(hero.getSuperheroName() == null){
-                    System.out.println("\nIntet heltenavn");
-                }
-                else{
-                    System.out.println("Superheltenavn: " + hero.getSuperheroName());
-                }
-                if (hero.isHuman() == true) {
-                    System.out.println("\nMenneske?: Ja");
-                } else {
-                    System.out.println("\nMenneske?: Nej");
-                }
-                System.out.println("\nSuperstyrke: " + hero.getSuperheroPower());
-                System.out.println("\nOprindelsesår: " + hero.getCreationYear() + "\n");
-                find = true;
+                findSuperheroList.add(hero);
             }
             else if(hero.getSuperheroName() != null && hero.getSuperheroName().contains(searchName.toLowerCase())){
-                System.out.println("Civilnavn : " + hero.getName());
-                if(hero.getSuperheroName() == null){
-                    System.out.println("\nIntet heltenavn");
-                }
-                else{
-                    System.out.println("Superheltenavn: " + hero.getSuperheroName());
-                }
-                if (hero.isHuman() == true) {
-                    System.out.println("\nMenneske?: Ja");
-                } else {
-                    System.out.println("\nMenneske?: Nej");
-                }
-                System.out.println("\nSuperstyrke: " + hero.getSuperheroPower());
-                System.out.println("\nOprindelsesår: " + hero.getCreationYear() + "\n");
-                find = true;
+                findSuperheroList.add(hero);
             }
         }
-        if(!find){
-            System.out.println("Kan ikke finde helte med " + searchName + " i navnet.\n");
-        }
+        return findSuperheroList;
     }
+
 }
 
 

@@ -40,7 +40,7 @@ public class Main {
                 case 3:
                     System.out.println("Søg på et helts civil navn: ");
                     String searchName = sc.nextLine();
-                    database.searchOfHero(searchName);
+                    database.searchForHero(searchName);
                     break;
                 case 9:
                     System.out.println("\nPå gensyn");
