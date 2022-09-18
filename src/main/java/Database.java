@@ -111,7 +111,10 @@ public class Database {
 
     //Samler en gruppe af helte, når man skal gemme resultater. Bruges til når der skal redigeres.
     public ArrayList<SuperHero> searchForHeroList(String searchName){
-        for (SuperHero hero : heroDatabase){
+        //for (SuperHero hero : heroDatabase){
+        SuperHero hero;
+        for (int n = 0; n<heroDatabase.size(); n++){
+            hero = heroDatabase.get(n);
             if(hero.getName().toLowerCase().contains(searchName.toLowerCase())){
                 findSuperheroList.add(hero);
 
@@ -120,7 +123,7 @@ public class Database {
                 findSuperheroList.add(hero);
             }
         }
-        return null;
+        return findSuperheroList;
     }
 
 }

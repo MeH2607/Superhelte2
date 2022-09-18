@@ -148,13 +148,13 @@ public class UserInterface {
         // }
 
     }
-//TODO troubleshoot denne metode
+
+
     private void findHeroList() {
         String name;
         System.out.println("Søg efter Superhelt ");
         name = sc.next();
-        for (SuperHero hero : database.searchForHeroList(name)) {
-            hero = database.searchForHero(name);
+        for(SuperHero hero : database.searchForHeroList(name))
             if (hero != null) {
                 System.out.println("Civilnavn : " + hero.getName());
                 if (hero.getSuperheroName() == null) {
@@ -170,11 +170,10 @@ public class UserInterface {
                 System.out.println("\nSuperstyrke: " + hero.getSuperheroPower());
                 System.out.println("\nOprindelsesår: " + hero.getCreationYear() + "\n\n");
             }
-            // }
-
         }
     }
-}
+
+
 
 
     /*
