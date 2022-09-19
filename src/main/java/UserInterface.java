@@ -23,8 +23,8 @@ public class UserInterface {
                     9. afslut
                     """);
 
-            //  menuValg = readInt();
-            boolean wrongUserInput = true;
+            menuValg = readInt();
+            /*boolean wrongUserInput = true;
             while (wrongUserInput) {
                 try {
                     menuValg = sc.nextInt();
@@ -33,7 +33,7 @@ public class UserInterface {
                     System.out.println("Ugyldig input, prøv igen");
                     sc.nextLine(); //til scannerbug gottemggs
                 }
-            }
+            }*/
 
             switch (menuValg) {
                 case 1:
@@ -103,7 +103,7 @@ public class UserInterface {
         sc.nextLine();
 
         System.out.println("\nHvornår blev de lavet: ");
-        int year = sc.nextInt();
+        int year = readInt();
 
         //Tjekker om de har et superheltenavn og opretter så hero objekter
         if (heroName == null) {
@@ -185,47 +185,102 @@ public class UserInterface {
                 System.out.println("\nOprindelsesår: " + hero.getCreationYear() + "\n\n");
             }
         }
-        if(database.getFindSuperheroList().isEmpty()){
+        if (database.getFindSuperheroList().isEmpty()) {
             System.out.println("Ingen helte med navnet " + name + "\n");
         }
     }
 
-        private void editHero () {
-            //Printer alle helte ud med deres plads nummer
-            System.out.println("Vælg helt der skal redigeres: \n");
-            for (SuperHero hero : database.getHeroDatabase()) {
-                System.out.println(database.getHeroDatabase().indexOf(hero) + 1 + ". " + hero.getName());
-            }
+    private void editHero() {
+        //Printer alle helte ud med deres plads nummer
+        System.out.println("Vælg helt der skal redigeres: \n");
+        for (SuperHero hero : database.getHeroDatabase()) {
+            System.out.println(database.getHeroDatabase().indexOf(hero) + 1 + ". " + hero.getName());
+        }
 
-            int v1 = sc.nextInt();
-            SuperHero hero = database.getHeroDatabase().get(v1 - 1);
+        int v1 = readInt();
+        SuperHero hero = database.getHeroDatabase().get(v1 - 1);
+
+        int v2;
+        do {
             System.out.println("""
-                    Hvad vil du redigere?
-                    1. Navn
-                    2. Heltenavn
-                    3. Superkraft
-                    4. Menneskelig
-                    5. Udgivelsesår""");
-            int v2 = sc.nextInt();
+                Hvad vil du redigere?
+                1. Navn
+                2. Heltenavn
+                3. Superkraft
+                4. Menneskelig
+                5. Udgivelsesår
+                9. Vend tilbage til menuen""");
+            v2 = readInt();
+            sc.nextLine();
             switch (v2) {
                 case 1:
-                    System.out.println("Rediger " + hero.getName());
+                    System.out.println("Rediger " + hero.getName() + " eller tryk enter for at fortryde");
                     String newName = sc.nextLine();
                     if (!newName.isEmpty()) {
                         hero.setName(newName);
                     }
+                    break;
+                case 2:
+                    System.out.println("Rediger " + hero.getSuperheroName() + " eller tryk enter for at fortryde");
+                    String newHeroName = sc.nextLine();
+                    if (!newHeroName.isEmpty()) {
+                        hero.setName(newHeroName);
+                    }
+                    break;
+                case 3:
+                    System.out.println("Rediger " + hero.getSuperheroPower() + " eller tryk enter for at fortryde");
+                    String newPower = sc.nextLine();
+                    if (!newPower.isEmpty()) {
+                        hero.setSuperheroPower(newPower);
+                    }
+                    break;
+                case 4:
+                    System.out.println("\nEr" + hero.getName() + " et menneske?");
+                    int valg2;
+                    do {
+                        System.out.println("\nTast 1 for ja\nTast 2 for nej");
+                        valg2 = readInt();
+                        //TODO erstat med if løkke, for roddet med en switch inden i en switch
+                        switch (valg2) {
+                            case 1:
+                                hero.setHuman(true);
+                                break;
+                            case 2:
+                                hero.setHuman(false);
+                                break;
+                            default:
+                                System.out.println("ugyldigt input, prøv igen");
+                        }
+                    } while (valg2 != 1 && valg2 != 2);
+                    break;
+                case 5:
+                    System.out.println("Rediger " + hero.getCreationYear() + " eller tryk enter for at fortryde");
+                  // String newYear = sc.nextLine();
+                    int newYear = 0;
+                    newYear = readInt();
+                    if (newYear == 0) {
+                        hero.setCreationYear(newYear);
+                    }
+                    break;
+                case 9:
+                    System.out.println("Vender tilbage");
+                    break;
+                default:
+                    System.out.println("Ugyldig valg, prøv igen");
             }
         }
-
-        public int readInt () {
-            while (!sc.hasNextInt()) {
-                String text = sc.next();
-                System.out.println(text + " er ugyldig input, indtast igen.");
-            }
-            int result = sc.nextInt();
-            return result;
-        }
+        while (v2 != 9);
     }
+
+    public int readInt() {
+        while (!sc.hasNextInt()) {
+            String text = sc.next();
+            System.out.println(text + " er ugyldig input, indtast igen.");
+        }
+        int result = sc.nextInt();
+        return result;
+    }
+}
 
 
 
