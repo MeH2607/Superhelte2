@@ -1,4 +1,5 @@
 
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class UserInterface {
@@ -9,7 +10,7 @@ public class UserInterface {
 
     public void startProgram() {
         sc = new Scanner(System.in);
-        int menuValg;
+        int menuValg = 0;
 
         System.out.println("Velkommen til Superhelte databasen\n");
         do {
@@ -22,9 +23,17 @@ public class UserInterface {
                     9. afslut
                     """);
 
-
-            menuValg = readInt();
-
+          //  menuValg = readInt();
+            boolean wrongUserInput = true;
+            while(wrongUserInput) {
+                try {
+                    menuValg = sc.nextInt();
+                    wrongUserInput = false;
+                } catch (InputMismatchException e) {
+                    System.out.println("Ugyldig input, prøv igen");
+                    sc.nextLine(); //til scannerbug gottemggs
+                }
+            }
 
             switch (menuValg) {
                 case 1:
@@ -34,7 +43,7 @@ public class UserInterface {
                     showAllHeroes();
                     break;
                 case 3:
-                    editHero();
+                    findHeroList();
                     break;
                 case 4:
                     editHero();

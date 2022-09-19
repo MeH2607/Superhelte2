@@ -54,6 +54,8 @@ public class Database {
     public ArrayList<SuperHero> searchForHeroList(String searchName){
         //for (SuperHero hero : heroDatabase){
         SuperHero hero;
+        //Clear for at når man søger flere gange så gemmes de gamle svar ikke
+        findSuperheroList.clear();
         for (int n = 0; n<heroDatabase.size(); n++){
             hero = heroDatabase.get(n);
             if(hero.getName().toLowerCase().contains(searchName.toLowerCase())){
