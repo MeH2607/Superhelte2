@@ -1,5 +1,4 @@
-import javax.xml.crypto.Data;
-import java.util.ArrayList;
+
 import java.util.Scanner;
 
 public class UserInterface {
@@ -22,7 +21,10 @@ public class UserInterface {
                     4. Rediger helte info
                     9. afslut
                     """);
-            menuValg = sc.nextInt();
+
+
+            menuValg = readInt();
+
 
             switch (menuValg) {
                 case 1:
@@ -86,8 +88,7 @@ public class UserInterface {
                 default:
                     System.out.println("ugyldigt input, prøv igen");
             }
-        }
-        while (valg2 != 1 && valg2 != 2);
+        } while (valg2 != 1 && valg2 != 2);
 
         //Scannerbug
         sc.nextLine();
@@ -158,7 +159,7 @@ public class UserInterface {
         String name;
         System.out.println("Søg efter Superhelt ");
         name = sc.next();
-        for(SuperHero hero : database.searchForHeroList(name))
+        for (SuperHero hero : database.searchForHeroList(name))
             if (hero != null) {
                 System.out.println("Civilnavn : " + hero.getName());
                 if (hero.getSuperheroName() == null) {
@@ -174,17 +175,17 @@ public class UserInterface {
                 System.out.println("\nSuperstyrke: " + hero.getSuperheroPower());
                 System.out.println("\nOprindelsesår: " + hero.getCreationYear() + "\n\n");
             }
-        }
+    }
 
-    private void editHero(){
+    private void editHero() {
         //Printer alle helte ud med deres plads nummer
         System.out.println("Vælg helt der skal redigeres: \n");
-        for(SuperHero hero : database.getHeroDatabase()){
-            System.out.println(database.getHeroDatabase().indexOf(hero)+1 + ". " + hero.getName());
+        for (SuperHero hero : database.getHeroDatabase()) {
+            System.out.println(database.getHeroDatabase().indexOf(hero) + 1 + ". " + hero.getName());
         }
 
         int v1 = sc.nextInt();
-        SuperHero hero = database.getHeroDatabase().get(v1-1);
+        SuperHero hero = database.getHeroDatabase().get(v1 - 1);
         System.out.println("""
                 Hvad vil du redigere?
                 1. Navn
@@ -193,122 +194,26 @@ public class UserInterface {
                 4. Menneskelig
                 5. Udgivelsesår""");
         int v2 = sc.nextInt();
-        switch (v2){
+        switch (v2) {
             case 1:
                 System.out.println("Rediger " + hero.getName());
                 String newName = sc.nextLine();
-                if(!newName.isEmpty()){
+                if (!newName.isEmpty()) {
                     hero.setName(newName);
                 }
         }
     }
 
+    public int readInt() {
+        while (!sc.hasNextInt()) {
+            String text = sc.next();
+            System.out.println(text + " er ugyldig input, indtast igen.");
+        }
+        int result = sc.nextInt();
+        return result;
+    }
 }
 
 
-    /*
-    public void searchForHero(String searchName){
-        Boolean find = false;
-        for (SuperHero hero : heroDatabase){
-            if(hero.getName().toLowerCase().contains(searchName.toLowerCase())){
-                System.out.println("Civilnavn : " + hero.getName());
-                if(hero.getSuperheroName() == null){
-                    System.out.println("\nIntet heltenavn");
-                }
-                else{
-                    System.out.println("Superheltenavn: " + hero.getSuperheroName());
-                }
-                if (hero.isHuman() == true) {
-                    System.out.println("\nMenneske?: Ja");
-                } else {
-                    System.out.println("\nMenneske?: Nej");
-                }
-                System.out.println("\nSuperstyrke: " + hero.getSuperheroPower());
-                System.out.println("\nOprindelsesår: " + hero.getCreationYear() + "\n");
-                find = true;
-            }
-            else if(hero.getSuperheroName() != null && hero.getSuperheroName().contains(searchName.toLowerCase())){
-                System.out.println("Civilnavn : " + hero.getName());
-                if(hero.getSuperheroName() == null){
-                    System.out.println("\nIntet heltenavn");
-                }
-                else{
-                    System.out.println("Superheltenavn: " + hero.getSuperheroName());
-                }
-                if (hero.isHuman() == true) {
-                    System.out.println("\nMenneske?: Ja");
-                } else {
-                    System.out.println("\nMenneske?: Nej");
-                }
-                System.out.println("\nSuperstyrke: " + hero.getSuperheroPower());
-                System.out.println("\nOprindelsesår: " + hero.getCreationYear() + "\n");
-                find = true;
-            }
-        }
-        if(!find){
-            System.out.println("Kan ikke finde helte med " + searchName + " i navnet.\n");
-        }
-    }
-     */
-
-/*
-    public void createAndAddHero() { //TODO lav denne kode om til ikke at printe, kun tilføje. Meget simpel metode
-        sc = new Scanner(System.in);
-        System.out.println("Tilføj en superhelt: ");
-        //I tilfælde af scannerbug
-
-
-        System.out.println("\nTilføj deres civil navn: ");
-        String name = sc.nextLine();
-
-        System.out.println("\nHar de et heltenavn?\n1. ja\n0. nej");
-        int svar = sc.nextInt();
-        sc.nextLine();
-        String heroName = null;
-        if (svar == 1) {
-            System.out.println("\nTilføj deres heltenavn: ");
-            heroName = sc.nextLine();
-        }
-
-        System.out.println("\nTilføj deres superstyrke: ");
-        String heroPower = sc.nextLine();
-
-        System.out.println("\nEr de et menneske?");
-        boolean isHuman = true;
-        int valg2;
-        do {
-            System.out.println("\nTast 1 for ja\nTast 2 for nej");
-            valg2 = sc.nextInt();
-            switch (valg2) {
-                case 1:
-                    isHuman = true;
-                    break;
-                case 2:
-                    isHuman = false;
-                    break;
-                default:
-                    System.out.println("ugyldigt input, prøv igen");
-            }
-        }
-        while (valg2 != 1 && valg2 != 2);
-
-        //Scannerbug
-        sc.nextLine();
-
-        System.out.println("\nHvornår blev de lavet: ");
-        int year = sc.nextInt();
-
-        //Tjekker om de har et superheltenavn og opretter så hero objekter
-        if (heroName == null) {
-            addToDatabase(name, heroPower, isHuman, year);
-            //   SuperHero hero = new SuperHero(name, heroPower, isHuman, year);
-            System.out.println("\nDu har tilføjet " + name + " til databasen.\n");
-        } else {
-            addToDatabase(name, heroName, heroPower, isHuman, year);
-            //  SuperHero hero = new SuperHero(name, heroName, heroPower, isHuman, year);
-            System.out.println("\nDu har tilføjet " + name + " også kendt som " + heroName + " til databasen.\n");
-        }
-    }
-*/
 
 
