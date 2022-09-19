@@ -23,9 +23,9 @@ public class UserInterface {
                     9. afslut
                     """);
 
-          //  menuValg = readInt();
+            //  menuValg = readInt();
             boolean wrongUserInput = true;
-            while(wrongUserInput) {
+            while (wrongUserInput) {
                 try {
                     menuValg = sc.nextInt();
                     wrongUserInput = false;
@@ -168,7 +168,7 @@ public class UserInterface {
         String name;
         System.out.println("Søg efter Superhelt ");
         name = sc.next();
-        for (SuperHero hero : database.searchForHeroList(name))
+        for (SuperHero hero : database.searchForHeroList(name)) {
             if (hero != null) {
                 System.out.println("Civilnavn : " + hero.getName());
                 if (hero.getSuperheroName() == null) {
@@ -184,44 +184,48 @@ public class UserInterface {
                 System.out.println("\nSuperstyrke: " + hero.getSuperheroPower());
                 System.out.println("\nOprindelsesår: " + hero.getCreationYear() + "\n\n");
             }
-    }
-
-    private void editHero() {
-        //Printer alle helte ud med deres plads nummer
-        System.out.println("Vælg helt der skal redigeres: \n");
-        for (SuperHero hero : database.getHeroDatabase()) {
-            System.out.println(database.getHeroDatabase().indexOf(hero) + 1 + ". " + hero.getName());
         }
-
-        int v1 = sc.nextInt();
-        SuperHero hero = database.getHeroDatabase().get(v1 - 1);
-        System.out.println("""
-                Hvad vil du redigere?
-                1. Navn
-                2. Heltenavn
-                3. Superkraft
-                4. Menneskelig
-                5. Udgivelsesår""");
-        int v2 = sc.nextInt();
-        switch (v2) {
-            case 1:
-                System.out.println("Rediger " + hero.getName());
-                String newName = sc.nextLine();
-                if (!newName.isEmpty()) {
-                    hero.setName(newName);
-                }
+        if(database.getFindSuperheroList().isEmpty()){
+            System.out.println("Ingen helte med navnet " + name + "\n");
         }
     }
 
-    public int readInt() {
-        while (!sc.hasNextInt()) {
-            String text = sc.next();
-            System.out.println(text + " er ugyldig input, indtast igen.");
+        private void editHero () {
+            //Printer alle helte ud med deres plads nummer
+            System.out.println("Vælg helt der skal redigeres: \n");
+            for (SuperHero hero : database.getHeroDatabase()) {
+                System.out.println(database.getHeroDatabase().indexOf(hero) + 1 + ". " + hero.getName());
+            }
+
+            int v1 = sc.nextInt();
+            SuperHero hero = database.getHeroDatabase().get(v1 - 1);
+            System.out.println("""
+                    Hvad vil du redigere?
+                    1. Navn
+                    2. Heltenavn
+                    3. Superkraft
+                    4. Menneskelig
+                    5. Udgivelsesår""");
+            int v2 = sc.nextInt();
+            switch (v2) {
+                case 1:
+                    System.out.println("Rediger " + hero.getName());
+                    String newName = sc.nextLine();
+                    if (!newName.isEmpty()) {
+                        hero.setName(newName);
+                    }
+            }
         }
-        int result = sc.nextInt();
-        return result;
+
+        public int readInt () {
+            while (!sc.hasNextInt()) {
+                String text = sc.next();
+                System.out.println(text + " er ugyldig input, indtast igen.");
+            }
+            int result = sc.nextInt();
+            return result;
+        }
     }
-}
 
 
 

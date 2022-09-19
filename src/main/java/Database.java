@@ -25,6 +25,10 @@ public class Database {
         return heroDatabase;
     }
 
+    public ArrayList<SuperHero> getFindSuperheroList() {
+        return findSuperheroList;
+    }
+
     public void addToDatabase(String name, String superheroName, String superheroPower, boolean human, int creationYear) {
             heroDatabase.add(new SuperHero(name, superheroName, superheroPower, human, creationYear));
     }
