@@ -74,7 +74,7 @@ class DatabaseTest {
         int expectedListSizeOne = 1;
         int expectedListSizeMany = 3;
 
-        assertAll("Tester søgning for 0, 1 og 3 helte",
+        assertAll("Tester nyindsatte helt",
                 () -> assertEquals(expectedListSizeNone, testListSizeNone),
                 () -> assertEquals(expectedListSizeOne, testListSizeOne),
                 () -> assertEquals(expectedListSizeMany, testListSizeMany)
