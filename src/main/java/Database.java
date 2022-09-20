@@ -10,9 +10,9 @@ public class Database {
     SuperHero s3 = new SuperHero("Johnny", "Cool as fuck",true, 2000);
     SuperHero s4 = new SuperHero("Saitama", "Super strength", true, 2009);*/
 
-    ArrayList<SuperHero> heroDatabase = new ArrayList<>(/*Arrays.asList(s1,s2,s3,s4)*/);
+   private ArrayList<SuperHero> heroDatabase = new ArrayList<>(/*Arrays.asList(s1,s2,s3,s4)*/);
 
-    ArrayList<SuperHero>findSuperheroList = new ArrayList<>();
+   private ArrayList<SuperHero>findSuperheroList = new ArrayList<>();
 
     Scanner sc;
 

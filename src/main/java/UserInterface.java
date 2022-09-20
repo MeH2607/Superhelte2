@@ -271,7 +271,7 @@ public class UserInterface {
         }
         while (v2 != 9);
     }
-
+// læser dit input og gentager løkken indtil du inputter en int.
     public int readInt() {
         while (!sc.hasNextInt()) {
             String text = sc.next();
