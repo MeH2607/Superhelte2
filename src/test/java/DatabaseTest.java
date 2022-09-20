@@ -48,7 +48,7 @@ class DatabaseTest {
     }
 
     @Test
-    void searchForHeroListMany() {
+    void searchForHeroList() {
         //Indsætter helte man kan søge efter
         SuperHero testHero1 = new SuperHero("Peter Parker", "Spider-man",
                 "Spider stuff", true, 1962);
@@ -62,13 +62,22 @@ class DatabaseTest {
 
         //Expected result should be Spider-man, Superman and Bat man
         // man is witg hyphen, no space and spaced for best test
-        String testSearchWord = "man";
+        String testSearchWordNone = "Wonder woman";
+        String testSearchWordOne = "Johnny";
+        String testSearchWordMany = "man";
 
-        int testListSize = db.searchForHeroList(testSearchWord).size();
+        int testListSizeNone = db.searchForHeroList(testSearchWordNone).size();
+        int testListSizeOne = db.searchForHeroList(testSearchWordOne).size();
+        int testListSizeMany = db.searchForHeroList(testSearchWordMany).size();
 
-        int expectedListSize = 3;
+        int expectedListSizeNone = 0;
+        int expectedListSizeOne = 1;
+        int expectedListSizeMany = 3;
 
-        assertEquals(expectedListSize, testListSize);
-
+        assertAll("Tester nyindsatte helt",
+                () -> assertEquals(expectedListSizeNone, testListSizeNone),
+                () -> assertEquals(expectedListSizeOne, testListSizeOne),
+                () -> assertEquals(expectedListSizeMany, testListSizeMany)
+            );
     }
 }
