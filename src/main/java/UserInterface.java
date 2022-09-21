@@ -20,7 +20,7 @@ public class UserInterface {
                     2. Vis alle helte
                     3. Søg på helte
                     4. Rediger helte info
-                    4. Slet helt
+                    5. Slet helt
                     9. afslut
                     """);
 
@@ -207,13 +207,13 @@ public class UserInterface {
         int v2;
         do {
             System.out.println("""
-                Hvad vil du redigere?
-                1. Navn
-                2. Heltenavn
-                3. Superkraft
-                4. Menneskelig
-                5. Udgivelsesår
-                9. Vend tilbage til menuen""");
+                    Hvad vil du redigere?
+                    1. Navn
+                    2. Heltenavn
+                    3. Superkraft
+                    4. Menneskelig
+                    5. Udgivelsesår
+                    9. Vend tilbage til menuen""");
             v2 = readInt();
             sc.nextLine();
             switch (v2) {
@@ -259,7 +259,7 @@ public class UserInterface {
                     break;
                 case 5:
                     System.out.println("Rediger " + hero.getCreationYear() + " eller tryk enter for at fortryde");
-                  // String newYear = sc.nextLine();
+                    // String newYear = sc.nextLine();
                     int newYear = 0;
                     newYear = readInt();
                     if (newYear == 0) {
@@ -275,13 +275,41 @@ public class UserInterface {
         }
         while (v2 != 9);
     }
-// læser dit input og gentager løkken indtil du inputter en int.
+
+    private void deleteHero() {
+//        int v1;
+//        int v2;
+        //Printer alle helte
+        System.out.println("Vælg helt der skal slettes: \n");
+        for (SuperHero hero : database.getHeroDatabase()) {
+            System.out.println(database.getHeroDatabase().indexOf(hero) + 1 + ". " + hero.getName());
+        }
+
+        int v1 = readInt();
+        System.out.println("Er du sikker på de vil slette " + database.getHeroDatabase().get(v1 -1).getName() + "?\n1. Slet " + database.getHeroDatabase().get(v1 - 1).getName() + "\n2. Fortryd");
+
+        int v2 = readInt();
+        switch (v2) {
+            case 1:
+                database.deleteHero(v1);
+            case 2:
+                System.out.println("Vender tilbage");
+                break;
+            default:
+                System.out.println("Ugyldig input");
+                break;
+        }
+    }
+
+    // læser dit input og gentager løkken indtil du inputter en int.
     public int readInt() {
         while (!sc.hasNextInt()) {
             String text = sc.next();
             System.out.println(text + " er ugyldig input, indtast igen.");
         }
-        int result = sc.nextInt();
+        int result;
+        result = sc.nextInt();
+        sc.nextLine();
         return result;
     }
 }
