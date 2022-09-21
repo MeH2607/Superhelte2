@@ -73,6 +73,12 @@ public class Database {
         return findSuperheroList;
     }
 
+    public void deleteHero(int heroToDelete){
+        int deleteOnIndex = heroToDelete - 1;
+        System.out.println(heroDatabase.get(deleteOnIndex).getName() + " has been deleted");
+        heroDatabase.remove(deleteOnIndex);
+    }
+
 }
 
 

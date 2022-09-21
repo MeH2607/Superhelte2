@@ -20,6 +20,7 @@ public class UserInterface {
                     2. Vis alle helte
                     3. Søg på helte
                     4. Rediger helte info
+                    4. Slet helt
                     9. afslut
                     """);
 
@@ -47,6 +48,9 @@ public class UserInterface {
                     break;
                 case 4:
                     editHero();
+                    break;
+                case 5:
+                    deleteHero();
                     break;
                 case 9:
                     System.out.println("\nPå gensyn");
@@ -136,7 +140,7 @@ public class UserInterface {
     }
 
 
-    private void findHero() {
+   /* private void findHero() {
         String name;
         System.out.println("Søg efter Superhelt ");
         name = sc.next();
@@ -161,7 +165,7 @@ public class UserInterface {
         }
         // }
 
-    }
+    }*/
 
 
     private void findHeroList() {
