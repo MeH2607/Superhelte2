@@ -11,7 +11,6 @@ class DatabaseTest {
 
 
     Database db = new Database();
-    SuperHero defaultHero;
 
     @BeforeEach
     void setUp() {
@@ -101,6 +100,7 @@ class DatabaseTest {
         //Har først skrevet logikken her og testet før jeg lavede den i databasen.
 
         //Arrange
+        //Tester at Clark Kent ender i index 0
         int expectedValueAfterDeletion = 3;
         String expectedNameOfNewIndex0 = "Clark Kent";
 
