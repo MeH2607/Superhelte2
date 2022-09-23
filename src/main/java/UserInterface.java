@@ -178,6 +178,7 @@ public class UserInterface {
         System.out.println("Søg efter Superhelt ");
         name = sc.next();
         for (SuperHero hero : database.searchForHeroList(name)) {
+            //Kunne nok have en smartere måde at printe på :P
             if (hero != null) {
                 System.out.println("Civilnavn : " + hero.getName());
                 if (hero.getSuperheroName() == null) {
