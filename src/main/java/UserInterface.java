@@ -1,15 +1,15 @@
-
-import java.util.InputMismatchException;
+import java.util.ArrayList;
 import java.util.Scanner;
-
 public class UserInterface {
+    private Scanner sc = new Scanner(System.in);
+    private Controller controller = new Controller();
 
-    private Database database = new Database();
-    Scanner sc;
+    //TODO lav lokale arraylister i hjælpe metoderne, så man ikke henter databasen flere gange
+    // hvis databasen ikke er tom.
 
 
     public void startProgram() {
-        sc = new Scanner(System.in);
+
         int menuValg = 0;
 
         System.out.println("Velkommen til Superhelte databasen\n");
@@ -25,32 +25,23 @@ public class UserInterface {
                     """);
 
             menuValg = readInt();
-            /*boolean wrongUserInput = true;
-            while (wrongUserInput) {
-                try {
-                    menuValg = sc.nextInt();
-                    wrongUserInput = false;
-                } catch (InputMismatchException e) {
-                    System.out.println("Ugyldig input, prøv igen");
-                    sc.nextLine(); //til scannerbug gottemggs
-                }
-            }*/
+
 
             switch (menuValg) {
                 case 1:
-                    createAndAddHero();
+                    createAndAddHeroLocalMethod();
                     break;
                 case 2:
-                    showAllHeroes();
+                    showAllHeroesLocalMethod();
                     break;
                 case 3:
-                    findHeroList();
+                    findHeroListLocalMethod();
                     break;
                 case 4:
-                    editHero();
+                    editHeroLocalMethod();
                     break;
                 case 5:
-                    deleteHero();
+                    deleteHeroLocalMethod();
                     break;
                 case 9:
                     System.out.println("\nPå gensyn");
@@ -64,18 +55,15 @@ public class UserInterface {
     }
 
 
-    private void createAndAddHero() { //TODO lav denne kode om til ikke at printe, kun tilføje. Meget simpel metode
-        sc = new Scanner(System.in);
-        System.out.println("Tilføj en superhelt: ");
-        //I tilfælde af scannerbug
-
+    private void createAndAddHeroLocalMethod() { //TODO lav denne kode om til ikke at printe, kun tilføje. Meget simpel metode
+        System.out.println("* Tilføj en superhelt *");
 
         System.out.println("\nTilføj deres civil navn: ");
         String name = sc.nextLine();
 
         System.out.println("\nHar de et heltenavn?\n1. ja\n0. nej");
         int svar = sc.nextInt();
-        sc.nextLine();
+        sc.nextLine(); //Til scannerbug
         String heroName = null;
         if (svar == 1) {
             System.out.println("\nTilføj deres heltenavn: ");
@@ -87,11 +75,11 @@ public class UserInterface {
 
         System.out.println("\nEr de et menneske?");
         boolean isHuman = true;
-        int valg2;
+        int valg;
         do {
             System.out.println("\nTast 1 for ja\nTast 2 for nej");
-            valg2 = sc.nextInt();
-            switch (valg2) {
+            valg = sc.nextInt();
+            switch (valg) {
                 case 1:
                     isHuman = true;
                     break;
@@ -101,120 +89,108 @@ public class UserInterface {
                 default:
                     System.out.println("ugyldigt input, prøv igen");
             }
-        } while (valg2 != 1 && valg2 != 2);
+        } while (valg != 1 && valg != 2);
 
-        //Scannerbug
+        //Scannerbug :(
         sc.nextLine();
 
         System.out.println("\nHvornår blev de lavet: ");
         int year = readInt();
 
+
+
         //Tjekker om de har et superheltenavn og opretter så hero objekter
         if (heroName == null) {
-            database.addToDatabase(name, heroPower, isHuman, year);
-            //   SuperHero hero = new SuperHero(name, heroPower, isHuman, year);
+            controller.createAndAddHero(name, heroPower, isHuman, year);
             System.out.println("\nDu har tilføjet " + name + " til databasen.\n");
         } else {
-            database.addToDatabase(name, heroName, heroPower, isHuman, year);
-            //  SuperHero hero = new SuperHero(name, heroName, heroPower, isHuman, year);
+            controller.createAndAddHero(name, heroName, heroPower, isHuman, year);
             System.out.println("\nDu har tilføjet " + name + " også kendt som " + heroName + " til databasen.\n");
         }
     }
 
-    private void showAllHeroes() {
-        //If løkken sender en besked hvis listen er tom
-        if (database.getHeroDatabase().isEmpty()) {
+    private void showAllHeroesLocalMethod() {
+        ArrayList<SuperHero> localHeroList = controller.getHeroDatabase();
+
+        if (localHeroList.isEmpty()) {
             System.out.println("Ingen helte i databasen");
         } else {
-            for (SuperHero hero : database.getHeroDatabase()) {
-                System.out.println("Civilnavn : " + hero.getName());
-                if (hero.getSuperheroName() == null) {
+            for (SuperHero h : localHeroList) {
+                System.out.println("Civilnavn : " + h.getName());
+                if (h.getSuperheroName() == null) {
                     System.out.println("\nIntet heltenavn");
                 } else {
-                    System.out.println("Superheltenavn: " + hero.getSuperheroName());
+                    System.out.println("Superheltenavn: " + h.getSuperheroName());
                 }
-                if (hero.isHuman() == true) {
+                if (h.isHuman() == true) {
                     System.out.println("\nMenneske?: Ja");
                 } else {
                     System.out.println("\nMenneske?: Nej");
                 }
-                System.out.println("\nSuperstyrke: " + hero.getSuperheroPower());
-                System.out.println("\nOprindelsesår: " + hero.getCreationYear() + "\n\n");
+                System.out.println("\nSuperstyrke: " + h.getSuperheroPower());
+                System.out.println("\nOprindelsesår: " + h.getCreationYear() + "\n\n");
             }
         }
     }
 
+    private void findHeroListLocalMethod() {
+        String searchName;
+        System.out.println("* Søg efter Superhelt *");
+        searchName = sc.nextLine();
+        ArrayList<SuperHero>localHeroList = controller.searchForHeroList(searchName);
 
-   /* private void findHero() {
-        String name;
-        System.out.println("Søg efter Superhelt ");
-        name = sc.next();
-        SuperHero hero;
+        for (SuperHero h : localHeroList) {
+            if (h != null) {
+                String name = h.getName();
+                String superHeroName = " ";
+                String isHuman = " ";
+                String superStyrke = h.getSuperheroPower();
+                int creationYear = h.getCreationYear();
 
-        //for (SuperHero hero : database.getHeroDatabase()){
-        hero = database.searchForHero(name);
-        if (hero != null) {
-            System.out.println("Civilnavn : " + hero.getName());
-            if (hero.getSuperheroName() == null) {
-                System.out.println("\nIntet heltenavn");
-            } else {
-                System.out.println("\nSuperheltenavn: " + hero.getSuperheroName());
-            }
-            if (hero.isHuman() == true) {
-                System.out.println("\nMenneske?: Ja");
-            } else {
-                System.out.println("\nMenneske?: Nej");
-            }
-            System.out.println("\nSuperstyrke: " + hero.getSuperheroPower());
-            System.out.println("\nOprindelsesår: " + hero.getCreationYear() + "\n\n");
-        }
-        // }
-
-    }*/
-
-
-    private void findHeroList() {
-        String name;
-        System.out.println("Søg efter Superhelt ");
-        name = sc.next();
-        for (SuperHero hero : database.searchForHeroList(name)) {
-            //Kunne nok have en smartere måde at printe på :P
-            if (hero != null) {
-                System.out.println("Civilnavn : " + hero.getName());
-                if (hero.getSuperheroName() == null) {
-                    System.out.println("\nIntet heltenavn");
+                if (h.getSuperheroName() == null) {
+                    superHeroName = "Intet heltenavn";
                 } else {
-                    System.out.println("\nSuperheltenavn: " + hero.getSuperheroName());
+                    superHeroName = h.getSuperheroName();
                 }
-                if (hero.isHuman() == true) {
-                    System.out.println("\nMenneske?: Ja");
+
+                if (h.isHuman() == true) {
+                    isHuman = "Ja";
                 } else {
-                    System.out.println("\nMenneske?: Nej");
+                    isHuman = "Nej";
                 }
-                System.out.println("\nSuperstyrke: " + hero.getSuperheroPower());
-                System.out.println("\nOprindelsesår: " + hero.getCreationYear() + "\n\n");
+
+                System.out.printf("""
+                        Civilnavn: %s
+                        Superheltenavn: %s
+                        Menneske?: %s
+                        Superstyrke: %s
+                        Oprindelsesår: %d
+                        
+                        """, name, superHeroName, isHuman, superStyrke, creationYear);
+
             }
         }
-        if (database.getFindSuperheroList().isEmpty()) {
-            System.out.println("Ingen helte med navnet " + name + "\n");
+        if (localHeroList.isEmpty()) {
+            System.out.println("Ingen helte med navnet " + searchName + "\n");
         }
     }
 
-    private void editHero() {
+    private void editHeroLocalMethod() {
         //If løkken sender en besked hvis listen er tom
-        if (database.getHeroDatabase().isEmpty()) {
+        ArrayList<SuperHero> localHeroList = controller.getHeroDatabase();
+        if (localHeroList.isEmpty()) {
             System.out.println("Ingen helte i databasen");
         } else {
             //Printer alle helte ud med deres plads nummer
             System.out.println("Vælg helt der skal redigeres: \n");
-            for (SuperHero hero : database.getHeroDatabase()) {
-                System.out.println(database.getHeroDatabase().indexOf(hero) + 1 + ". " + hero.getName());
+            for (SuperHero h : localHeroList) {
+                System.out.println(localHeroList.indexOf(h) + 1 + ". " + h.getName());
             }
 
-            int v1 = readInt();
-            SuperHero hero = database.getHeroDatabase().get(v1 - 1);
+            int input1 = readInt();
+            SuperHero hero = localHeroList.get(input1 - 1);
 
-            int v2;
+            int input2;
             do {
                 System.out.println("""
                         Hvad vil du redigere?
@@ -224,9 +200,9 @@ public class UserInterface {
                         4. Menneskelig
                         5. Udgivelsesår
                         9. Vend tilbage til menuen""");
-                v2 = readInt();
+                input2 = readInt();
                 sc.nextLine();
-                switch (v2) {
+                switch (input2) {
                     case 1:
                         System.out.println("Rediger " + hero.getName() + " eller tryk enter for at fortryde");
                         String newName = sc.nextLine();
@@ -254,7 +230,6 @@ public class UserInterface {
                         do {
                             System.out.println("\nTast 1 for ja\nTast 2 for nej");
                             valg2 = readInt();
-                            //TODO erstat med if løkke, for roddet med en switch inden i en switch
                             switch (valg2) {
                                 case 1:
                                     hero.setHuman(true);
@@ -269,7 +244,7 @@ public class UserInterface {
                         break;
                     case 5:
                         System.out.println("Rediger " + hero.getCreationYear() + " eller tryk enter for at fortryde");
-                        // String newYear = sc.nextLine();
+                       //TODO til mohamed, test dette stykke kode
                         int newYear = 0;
                         newYear = readInt();
                         if (newYear == 0) {
@@ -283,29 +258,32 @@ public class UserInterface {
                         System.out.println("Ugyldig valg, prøv igen");
                 }
             }
-            while (v2 != 9);
+            while (input2 != 9);
         }
     }
 
-    private void deleteHero() {
+    private void deleteHeroLocalMethod() {
         //If løkken sender en besked hvis listen er tom
-        if (database.getHeroDatabase().isEmpty()) {
+        ArrayList<SuperHero> localHeroList = controller.getHeroDatabase();
+        if (localHeroList.isEmpty()) {
             System.out.println("Ingen helte i databasen");
         } else {
             //Printer alle helte ud med deres plads nummer
             System.out.println("Vælg helt der skal slettes: \n");
-            for (SuperHero hero : database.getHeroDatabase()) {
-                System.out.println(database.getHeroDatabase().indexOf(hero) + 1 + ". " + hero.getName());
+            for (SuperHero hero : localHeroList) {
+                System.out.println(localHeroList.indexOf(hero) + 1 + ". " + hero.getName());
             }
 
             //Modtager bruger input for hvem der skal slettes og en advarsel.
             int v1 = readInt();
-            System.out.println("Er du sikker på de vil slette " + database.getHeroDatabase().get(v1 - 1).getName() + "?\n1. Slet " + database.getHeroDatabase().get(v1 - 1).getName() + "\n2. Fortryd");
+            SuperHero heroToDelete = localHeroList.get(v1-1);
+            System.out.println("Er du sikker på de vil slette " + heroToDelete.getName() +
+                    "?\n1. Slet " + heroToDelete.getName() + "\n2. Fortryd");
 
             int v2 = readInt();
             switch (v2) {
                 case 1:
-                    database.deleteHero(v1);
+                    controller.deleteHero(v1);
                 case 2:
                     System.out.println("Vender tilbage");
                     break;
