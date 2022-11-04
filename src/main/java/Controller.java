@@ -1,5 +1,6 @@
-import javax.xml.crypto.Data;
+import java.io.IOException;
 import java.util.ArrayList;
+import java.util.logging.FileHandler;
 
 public class Controller {
 
@@ -30,6 +31,19 @@ public class Controller {
 
     public void deleteHero(int heroToDelete){
         database.deleteHero(heroToDelete);
+    }
+
+    public ArrayList<SuperHero> readFile() {
+        return f.readFile();
+    }
+
+    public void writeToFile(ArrayList<SuperHero> list) {
+        f.writeToFile(list);
+    }
+
+
+    public void initialLoad(){
+        database.setHeroDatabase(f.readFile());
     }
 
 }

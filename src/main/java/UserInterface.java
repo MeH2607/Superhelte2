@@ -111,12 +111,13 @@ public class UserInterface {
     }
 
     private void showAllHeroesLocalMethod() {
-        ArrayList<SuperHero> localHeroList = controller.getHeroDatabase();
 
-        if (localHeroList.isEmpty()) {
+        ArrayList<SuperHero> list = controller.getHeroDatabase();
+
+        if (list.isEmpty()) {
             System.out.println("Ingen helte i databasen");
         } else {
-            for (SuperHero h : localHeroList) {
+            for (SuperHero h : list) {
                 System.out.println("Civilnavn : " + h.getName());
                 if (h.getSuperheroName() == null) {
                     System.out.println("\nIntet heltenavn");
