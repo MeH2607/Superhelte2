@@ -5,8 +5,8 @@ public class SuperHero {
     private String name;
     private String superheroName;
     private String superheroPower;
-    private int creationYear;
     private boolean human;
+    private int creationYear;
 
     public SuperHero(String name, String superheroName, String superheroPower, boolean human, int creationYear) {
         this.name = name;
@@ -61,5 +61,11 @@ public class SuperHero {
 
     public void setHuman(boolean human) {
         this.human = human;
+    }
+
+    @Override
+    public String toString() {
+        return
+                 name  + "," + superheroName + "," + superheroPower + "," + human + "," + creationYear;
     }
 }

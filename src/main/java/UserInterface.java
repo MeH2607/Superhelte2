@@ -55,7 +55,7 @@ public class UserInterface {
     }
 
 
-    private void createAndAddHeroLocalMethod() { //TODO lav denne kode om til ikke at printe, kun tilføje. Meget simpel metode
+    private void createAndAddHeroLocalMethod() {
         System.out.println("* Tilføj en superhelt *");
 
         System.out.println("\nTilføj deres civil navn: ");
@@ -105,6 +105,7 @@ public class UserInterface {
             System.out.println("\nDu har tilføjet " + name + " til databasen.\n");
         } else {
             controller.createAndAddHero(name, heroName, heroPower, isHuman, year);
+            controller.writeToFile(controller.getHeroDatabase());
             System.out.println("\nDu har tilføjet " + name + " også kendt som " + heroName + " til databasen.\n");
         }
     }
