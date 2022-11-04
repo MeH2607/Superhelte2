@@ -9,6 +9,7 @@ public class UserInterface {
 
 
     public void startProgram() {
+        controller.initialLoad();
 
         int menuValg = 0;
 
@@ -97,11 +98,10 @@ public class UserInterface {
         System.out.println("\nHvornår blev de lavet: ");
         int year = readInt();
 
-
-
         //Tjekker om de har et superheltenavn og opretter så hero objekter
         if (heroName == null) {
             controller.createAndAddHero(name, heroPower, isHuman, year);
+            controller.writeToFile(controller.getHeroDatabase());
             System.out.println("\nDu har tilføjet " + name + " til databasen.\n");
         } else {
             controller.createAndAddHero(name, heroName, heroPower, isHuman, year);
