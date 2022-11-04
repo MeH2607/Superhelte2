@@ -10,6 +10,10 @@ public class Database {
         return heroDatabase;
     }
 
+    public void setHeroDatabase(ArrayList<SuperHero> heroDatabase) {
+        this.heroDatabase = heroDatabase;
+    }
+
     public ArrayList<SuperHero> getFindSuperheroList() {
         return findSuperheroList;
     }

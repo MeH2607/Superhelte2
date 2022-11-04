@@ -62,4 +62,10 @@ public class SuperHero {
     public void setHuman(boolean human) {
         this.human = human;
     }
+
+    @Override
+    public String toString() {
+        return
+                 name  + "," + superheroName + "," + superheroPower + "," + human + "," + creationYear;
+    }
 }
