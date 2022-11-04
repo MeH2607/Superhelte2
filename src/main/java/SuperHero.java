@@ -5,8 +5,8 @@ public class SuperHero {
     private String name;
     private String superheroName;
     private String superheroPower;
-    private boolean human;
     private int creationYear;
+    private boolean human;
 
     public SuperHero(String name, String superheroName, String superheroPower, boolean human, int creationYear) {
         this.name = name;
