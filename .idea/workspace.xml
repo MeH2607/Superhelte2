@@ -4,16 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7c6cf052-5ed1-49bd-946c-4fcfb29fd719" name="Changes" comment="Flyttet alle klasser til packages">
-      <change afterPath="$PROJECT_DIR$/src/main/java/Comparator/HeroNameComparator.java" afterDir="false" />
+    <list default="true" id="c3f9186f-b8e2-45ab-9d3b-f48aab031d63" name="Changes" comment="slettet scanner og testData fra database. Slettet FindHero i databasen og UserInterface. Slettet overflødig kommentarer.&#10;Gjort scanner private.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Comparator/NameComparator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Comparator/NameComparator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Controller/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controller/Controller.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Data/Database.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Data/Database.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/MainAndUI/UserInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MainAndUI/UserInterface.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Comparator/HeroNameComparator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Comparator/HeroNameComparator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Data/SuperHero.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Data/SuperHero.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/DatabaseTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/DatabaseTest.java" afterDir="false" />
     </list>
-    <list id="db777e98-2666-4273-aa90-c9492e2cacd2" name="Changes by jonat" comment="Changes by jonat" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -59,7 +55,7 @@
     &quot;codeWithMe.voiceChat.enabledByDefault&quot;: &quot;false&quot;,
     &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary&quot;: &quot;JUnit5&quot;,
     &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5&quot;: &quot;&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/moham/IdeaProjects/Superhelte2Eksperiment&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/moham/IdeaProjects&quot;,
     &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
     &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
     &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
@@ -75,20 +71,10 @@
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Main">
+  <component name="RunManager" selected="JUnit.DatabaseTest.sortByHeroNameTest">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="MainAndUI.Main" />
+      <option name="MAIN_CLASS_NAME" value="Main" />
       <module name="SuperhelteProjekt" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="DatabaseTest.addToDatabase" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="SuperhelteProjekt" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="DatabaseTest" />
-      <option name="METHOD_NAME" value="addToDatabase" />
-      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -98,6 +84,16 @@
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="DatabaseTest" />
       <option name="METHOD_NAME" value="searchForHeroListMany" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="DatabaseTest.sortByHeroNameTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="SuperhelteProjekt" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="DatabaseTest" />
+      <option name="METHOD_NAME" value="sortByHeroNameTest" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -125,11 +121,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.DatabaseTest.sortByHeroNameTest" />
         <item itemvalue="Application.Main" />
         <item itemvalue="JUnit.FilehandlerTest.readSuperHeroesFromFile" />
         <item itemvalue="JUnit.FilehandlerTest.saveSuperHeroesToFile" />
         <item itemvalue="JUnit.DatabaseTest.searchForHeroListMany" />
-        <item itemvalue="JUnit.DatabaseTest.addToDatabase" />
       </list>
     </recent_temporary>
   </component>
@@ -148,8 +144,7 @@
       <workItem from="1667202403866" duration="3673000" />
       <workItem from="1667207418082" duration="16000" />
       <workItem from="1667207566478" duration="7336000" />
-      <workItem from="1667551306146" duration="7726000" />
-      <workItem from="1667748454893" duration="3882000" />
+      <workItem from="1667551306146" duration="7177000" />
     </task>
     <task id="LOCAL-00001" summary="Har oprettet SuperHero klassen, og opretter en SuperHero i Main. Glemte måske at commit noget tidligere...">
       <created>1662974800912</created>
@@ -298,56 +293,7 @@
       <option name="project" value="LOCAL" />
       <updated>1667213619794</updated>
     </task>
-    <task id="LOCAL-00022" summary="User story #10">
-      <created>1667558910675</created>
-      <option name="number" value="00022" />
-      <option name="presentableId" value="LOCAL-00022" />
-      <option name="project" value="LOCAL" />
-      <updated>1667558910675</updated>
-    </task>
-    <task id="LOCAL-00023" summary="User story #10">
-      <created>1667558925214</created>
-      <option name="number" value="00023" />
-      <option name="presentableId" value="LOCAL-00023" />
-      <option name="project" value="LOCAL" />
-      <updated>1667558925214</updated>
-    </task>
-    <task id="LOCAL-00024" summary="Changes by jonat">
-      <created>1667558931274</created>
-      <option name="number" value="00024" />
-      <option name="presentableId" value="LOCAL-00024" />
-      <option name="project" value="LOCAL" />
-      <updated>1667558931274</updated>
-    </task>
-    <task id="LOCAL-00025" summary="Refaktoreret koden så den arbejder med controller. Andre finpudsninger">
-      <created>1667558939365</created>
-      <option name="number" value="00025" />
-      <option name="presentableId" value="LOCAL-00025" />
-      <option name="project" value="LOCAL" />
-      <updated>1667558939365</updated>
-    </task>
-    <task id="LOCAL-00026" summary="Refaktoreret koden så den arbejder med controller. Andre finpudsninger">
-      <created>1667558955137</created>
-      <option name="number" value="00026" />
-      <option name="presentableId" value="LOCAL-00026" />
-      <option name="project" value="LOCAL" />
-      <updated>1667558955137</updated>
-    </task>
-    <task id="LOCAL-00027" summary="Merge remote-tracking branch 'github/main'&#10;&#10;# Conflicts:&#10;#&#9;src/main/java/SuperHero.java">
-      <created>1667748068687</created>
-      <option name="number" value="00027" />
-      <option name="presentableId" value="LOCAL-00027" />
-      <option name="project" value="LOCAL" />
-      <updated>1667748068687</updated>
-    </task>
-    <task id="LOCAL-00028" summary="Flyttet alle klasser til packages">
-      <created>1667749293895</created>
-      <option name="number" value="00028" />
-      <option name="presentableId" value="LOCAL-00028" />
-      <option name="project" value="LOCAL" />
-      <updated>1667749293895</updated>
-    </task>
-    <option name="localTasksCounter" value="29" />
+    <option name="localTasksCounter" value="22" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -365,6 +311,8 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
+    <MESSAGE value="Har oprettet SuperHero klassen, og opretter en SuperHero i Main. Glemte måske at commit noget tidligere..." />
+    <MESSAGE value="Har lavet en switch der ikke virker" />
     <MESSAGE value="Har erstattet switch med if løkke" />
     <MESSAGE value="Har løst problemet med while løkken," />
     <MESSAGE value="Har erstattet arrays med arraylist og tilføjet System.exit(0) for at lukke programmet" />
@@ -384,21 +332,16 @@
     <MESSAGE value="en ekstra kommentar" />
     <MESSAGE value="Refaktoreret koden så den arbejder med controller" />
     <MESSAGE value="Changes by paulk" />
-    <MESSAGE value="Changes by Asger_studie" />
-    <MESSAGE value="Changes by jonat" />
-    <MESSAGE value="User story #10" />
     <MESSAGE value="Refaktoreret koden så den arbejder med controller. Andre finpudsninger" />
-    <MESSAGE value="Merge remote-tracking branch 'github/main'&#10;&#10;# Conflicts:&#10;#&#9;src/main/java/SuperHero.java" />
-    <MESSAGE value="Flyttet alle klasser til packages" />
-    <option name="LAST_COMMIT_MESSAGE" value="Flyttet alle klasser til packages" />
+    <option name="LAST_COMMIT_MESSAGE" value="Refaktoreret koden så den arbejder med controller. Andre finpudsninger" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/test/java/FilehandlerTest.java</url>
-          <line>55</line>
-          <properties class="FilehandlerTest" method="readSuperHeroesFromFile">
+          <line>53</line>
+          <properties class="FilehandlerTest">
             <option name="EMULATED" value="true" />
             <option name="WATCH_EXIT" value="false" />
           </properties>
