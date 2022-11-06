@@ -1,3 +1,5 @@
+import Data.Database;
+import Data.SuperHero;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -25,7 +27,7 @@ class FilehandlerTest {
                 "Spider stuff", true, 1962);
         SuperHero testHero2 = new SuperHero("Clark Kent", "Superman",
                 "Super everything", false, 1938);
-       /* SuperHero testHero3 = new SuperHero("Johnny",
+       /* Data.SuperHero testHero3 = new Data.SuperHero("Johnny",
                 "Cool as shit", true, 2000);*/
         SuperHero testHero4 = new SuperHero("Bruce Wayne", "Batman",
                 "Money", true, 1939);

@@ -1,3 +1,5 @@
+import Data.Database;
+import Data.SuperHero;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 

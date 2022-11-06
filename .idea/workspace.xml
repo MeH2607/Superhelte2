@@ -4,26 +4,19 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7c6cf052-5ed1-49bd-946c-4fcfb29fd719" name="Changes" comment="Refaktoreret koden så den arbejder med controller">
-      <change afterPath="$PROJECT_DIR$/SuperHeroDatabase.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Filehandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/FilehandlerTest.java" afterDir="false" />
+    <list default="true" id="7c6cf052-5ed1-49bd-946c-4fcfb29fd719" name="Changes" comment="Merge remote-tracking branch 'github/main'&#10;&#10;# Conflicts:&#10;#&#9;src/main/java/SuperHero.java">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controller.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Database.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Database.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/SuperHero.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/SuperHero.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/UserInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/UserInterface.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Comparator/NameComparator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Comparator/NameComparator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controller/Controller.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Database.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Data/Database.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Filehandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Data/Filehandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MainAndUI/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/SuperHero.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Data/SuperHero.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/UserInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MainAndUI/UserInterface.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/DatabaseTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/DatabaseTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/FilehandlerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/FilehandlerTest.java" afterDir="false" />
     </list>
-    <list id="66fe4926-1223-423c-b15d-217d06917955" name="Changes by Asger_studie" comment="">
-      <change beforePath="$PROJECT_DIR$/src/main/java/SuperHero.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/SuperHero.java" afterDir="false" />
-    </list>
-    <list id="db777e98-2666-4273-aa90-c9492e2cacd2" name="Changes by jonat" comment="">
-      <change beforePath="$PROJECT_DIR$/src/main/java/UserInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/UserInterface.java" afterDir="false" />
-    </list>
-    <list id="1e7f478f-bb30-4c16-9437-fb5b9e810eb9" name="Changes by paulk" comment="Refaktoreret koden så den arbejder med controller. Andre finpudsninger">
-      <change beforePath="$PROJECT_DIR$/src/main/java/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controller.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/UserInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/UserInterface.java" afterDir="false" />
-    </list>
+    <list id="db777e98-2666-4273-aa90-c9492e2cacd2" name="Changes by jonat" comment="Changes by jonat" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -39,37 +32,6 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
-  </component>
-  <component name="LineStatusTrackerManager">
-    <file path="$PROJECT_DIR$/src/main/java/UserInterface.java">
-      <ranges>
-        <range start1="11" end1="11" start2="11" end2="12" changelist="db777e98-2666-4273-aa90-c9492e2cacd2" />
-        <range start1="57" end1="58" start2="58" end2="59" changelist="7c6cf052-5ed1-49bd-946c-4fcfb29fd719" />
-        <range start1="98" end1="100" start2="99" end2="99" changelist="db777e98-2666-4273-aa90-c9492e2cacd2" />
-        <range start1="104" end1="104" start2="103" end2="104" changelist="db777e98-2666-4273-aa90-c9492e2cacd2" />
-        <range start1="107" end1="107" start2="107" end2="108" changelist="7c6cf052-5ed1-49bd-946c-4fcfb29fd719" />
-        <range start1="112" end1="113" start2="113" end2="113" changelist="1e7f478f-bb30-4c16-9437-fb5b9e810eb9" />
-        <range start1="114" end1="115" start2="114" end2="117" changelist="1e7f478f-bb30-4c16-9437-fb5b9e810eb9" />
-        <range start1="117" end1="118" start2="119" end2="120" changelist="1e7f478f-bb30-4c16-9437-fb5b9e810eb9" />
-      </ranges>
-    </file>
-    <file path="$PROJECT_DIR$/src/main/java/Controller.java">
-      <ranges>
-        <range start1="0" end1="1" start2="0" end2="1" changelist="1e7f478f-bb30-4c16-9437-fb5b9e810eb9" />
-        <range start1="2" end1="2" start2="2" end2="3" changelist="1e7f478f-bb30-4c16-9437-fb5b9e810eb9" />
-        <range start1="5" end1="6" start2="6" end2="8" changelist="7c6cf052-5ed1-49bd-946c-4fcfb29fd719" />
-        <range start1="7" end1="8" start2="9" end2="13" changelist="7c6cf052-5ed1-49bd-946c-4fcfb29fd719" />
-        <range start1="29" end1="29" start2="34" end2="47" changelist="1e7f478f-bb30-4c16-9437-fb5b9e810eb9" />
-      </ranges>
-    </file>
-    <file path="$PROJECT_DIR$/src/main/java/SuperHero.java">
-      <ranges>
-        <range start1="7" end1="8" start2="7" end2="7" changelist="66fe4926-1223-423c-b15d-217d06917955" />
-        <range start1="9" end1="9" start2="8" end2="9" changelist="66fe4926-1223-423c-b15d-217d06917955" />
-        <range start1="64" end1="64" start2="64" end2="70" changelist="7c6cf052-5ed1-49bd-946c-4fcfb29fd719" />
-        <range start1="65" end1="66" start2="71" end2="71" changelist="66fe4926-1223-423c-b15d-217d06917955" />
-      </ranges>
-    </file>
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -100,7 +62,7 @@
     &quot;codeWithMe.voiceChat.enabledByDefault&quot;: &quot;false&quot;,
     &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary&quot;: &quot;JUnit5&quot;,
     &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5&quot;: &quot;&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/moham/IdeaProjects&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/moham/IdeaProjects/Superhelte2Eksperiment&quot;,
     &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
     &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
     &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
@@ -118,7 +80,7 @@
   </component>
   <component name="RunManager" selected="Application.Main">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Main" />
+      <option name="MAIN_CLASS_NAME" value="MainAndUI.Main" />
       <module name="SuperhelteProjekt" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -189,7 +151,8 @@
       <workItem from="1667202403866" duration="3673000" />
       <workItem from="1667207418082" duration="16000" />
       <workItem from="1667207566478" duration="7336000" />
-      <workItem from="1667551306146" duration="7177000" />
+      <workItem from="1667551306146" duration="7726000" />
+      <workItem from="1667748454893" duration="793000" />
     </task>
     <task id="LOCAL-00001" summary="Har oprettet SuperHero klassen, og opretter en SuperHero i Main. Glemte måske at commit noget tidligere...">
       <created>1662974800912</created>
@@ -338,7 +301,49 @@
       <option name="project" value="LOCAL" />
       <updated>1667213619794</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="User story #10">
+      <created>1667558910675</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1667558910675</updated>
+    </task>
+    <task id="LOCAL-00023" summary="User story #10">
+      <created>1667558925214</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1667558925214</updated>
+    </task>
+    <task id="LOCAL-00024" summary="Changes by jonat">
+      <created>1667558931274</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1667558931274</updated>
+    </task>
+    <task id="LOCAL-00025" summary="Refaktoreret koden så den arbejder med controller. Andre finpudsninger">
+      <created>1667558939365</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1667558939365</updated>
+    </task>
+    <task id="LOCAL-00026" summary="Refaktoreret koden så den arbejder med controller. Andre finpudsninger">
+      <created>1667558955137</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1667558955137</updated>
+    </task>
+    <task id="LOCAL-00027" summary="Merge remote-tracking branch 'github/main'&#10;&#10;# Conflicts:&#10;#&#9;src/main/java/SuperHero.java">
+      <created>1667748068687</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1667748068687</updated>
+    </task>
+    <option name="localTasksCounter" value="28" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -356,7 +361,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Har oprettet SuperHero klassen, og opretter en SuperHero i Main. Glemte måske at commit noget tidligere..." />
     <MESSAGE value="Har lavet en switch der ikke virker" />
     <MESSAGE value="Har erstattet switch med if løkke" />
     <MESSAGE value="Har løst problemet med while løkken," />
@@ -377,15 +381,19 @@
     <MESSAGE value="en ekstra kommentar" />
     <MESSAGE value="Refaktoreret koden så den arbejder med controller" />
     <MESSAGE value="Changes by paulk" />
+    <MESSAGE value="Changes by Asger_studie" />
+    <MESSAGE value="Changes by jonat" />
+    <MESSAGE value="User story #10" />
     <MESSAGE value="Refaktoreret koden så den arbejder med controller. Andre finpudsninger" />
-    <option name="LAST_COMMIT_MESSAGE" value="Refaktoreret koden så den arbejder med controller. Andre finpudsninger" />
+    <MESSAGE value="Merge remote-tracking branch 'github/main'&#10;&#10;# Conflicts:&#10;#&#9;src/main/java/SuperHero.java" />
+    <option name="LAST_COMMIT_MESSAGE" value="Merge remote-tracking branch 'github/main'&#10;&#10;# Conflicts:&#10;#&#9;src/main/java/SuperHero.java" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/test/java/FilehandlerTest.java</url>
-          <line>53</line>
+          <line>55</line>
           <properties class="FilehandlerTest" method="readSuperHeroesFromFile">
             <option name="EMULATED" value="true" />
             <option name="WATCH_EXIT" value="false" />
