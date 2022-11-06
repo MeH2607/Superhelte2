@@ -4,18 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7c6cf052-5ed1-49bd-946c-4fcfb29fd719" name="Changes" comment="Merge remote-tracking branch 'github/main'&#10;&#10;# Conflicts:&#10;#&#9;src/main/java/SuperHero.java">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Comparator/NameComparator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Comparator/NameComparator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controller/Controller.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Database.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Data/Database.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Filehandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Data/Filehandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MainAndUI/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/SuperHero.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Data/SuperHero.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/UserInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MainAndUI/UserInterface.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/DatabaseTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/DatabaseTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/FilehandlerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/FilehandlerTest.java" afterDir="false" />
-    </list>
+    <list default="true" id="7c6cf052-5ed1-49bd-946c-4fcfb29fd719" name="Changes" comment="sortByName lavet. Tester SortByHeroName" />
     <list id="db777e98-2666-4273-aa90-c9492e2cacd2" name="Changes by jonat" comment="Changes by jonat" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -152,7 +141,7 @@
       <workItem from="1667207418082" duration="16000" />
       <workItem from="1667207566478" duration="7336000" />
       <workItem from="1667551306146" duration="7726000" />
-      <workItem from="1667748454893" duration="793000" />
+      <workItem from="1667748454893" duration="3920000" />
     </task>
     <task id="LOCAL-00001" summary="Har oprettet SuperHero klassen, og opretter en SuperHero i Main. Glemte måske at commit noget tidligere...">
       <created>1662974800912</created>
@@ -343,7 +332,21 @@
       <option name="project" value="LOCAL" />
       <updated>1667748068687</updated>
     </task>
-    <option name="localTasksCounter" value="28" />
+    <task id="LOCAL-00028" summary="Flyttet alle klasser til packages">
+      <created>1667749293895</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1667749293895</updated>
+    </task>
+    <task id="LOCAL-00029" summary="sortByName lavet. Tester SortByHeroName">
+      <created>1667752901038</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1667752901038</updated>
+    </task>
+    <option name="localTasksCounter" value="30" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -361,8 +364,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Har lavet en switch der ikke virker" />
-    <MESSAGE value="Har erstattet switch med if løkke" />
     <MESSAGE value="Har løst problemet med while løkken," />
     <MESSAGE value="Har erstattet arrays med arraylist og tilføjet System.exit(0) for at lukke programmet" />
     <MESSAGE value="Har fjernet n fra database og andre små ting der bruges til array som ikke bruges mere" />
@@ -386,7 +387,9 @@
     <MESSAGE value="User story #10" />
     <MESSAGE value="Refaktoreret koden så den arbejder med controller. Andre finpudsninger" />
     <MESSAGE value="Merge remote-tracking branch 'github/main'&#10;&#10;# Conflicts:&#10;#&#9;src/main/java/SuperHero.java" />
-    <option name="LAST_COMMIT_MESSAGE" value="Merge remote-tracking branch 'github/main'&#10;&#10;# Conflicts:&#10;#&#9;src/main/java/SuperHero.java" />
+    <MESSAGE value="Flyttet alle klasser til packages" />
+    <MESSAGE value="sortByName lavet. Tester SortByHeroName" />
+    <option name="LAST_COMMIT_MESSAGE" value="sortByName lavet. Tester SortByHeroName" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

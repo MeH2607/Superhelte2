@@ -49,6 +49,9 @@ public class UserInterface {
                 case 5:
                     deleteHeroLocalMethod();
                     break;
+                case 6:
+                    sortByNameLocalMethod();
+                    break;
                 case 9:
                     System.out.println("\nPå gensyn");
                     System.exit(0);
@@ -311,6 +314,12 @@ public class UserInterface {
         result = sc.nextInt();
         sc.nextLine();
         return result;
+    }
+
+    public void sortByNameLocalMethod(){
+        for(SuperHero hero : controller.sortByName()){
+            System.out.println(hero.toString() + "\n");
+        }
     }
 }
 

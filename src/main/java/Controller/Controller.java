@@ -52,6 +52,10 @@ public class Controller {
         database.setHeroDatabase(f.readFile());
     }
 
+    public ArrayList<SuperHero> sortByName(){
+        return database.sortByName();
+    }
+
 }
 
 

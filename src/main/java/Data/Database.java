@@ -1,11 +1,15 @@
 package Data;
 
+import Comparator.NameComparator;
+
 import java.util.ArrayList;
+import java.util.Collections;
 
 public class Database {
 
     private ArrayList<SuperHero> heroDatabase = new ArrayList<>();
     private ArrayList<SuperHero> findSuperheroList = new ArrayList<>();
+
 
 
     public ArrayList<SuperHero> getHeroDatabase() {
@@ -55,6 +59,12 @@ public class Database {
         heroDatabase.remove(deleteOnIndex);
     }
 
+    public ArrayList<SuperHero> sortByName(){
+        ArrayList<SuperHero> sortByNameList = new ArrayList<>();
+        sortByNameList.addAll(heroDatabase);
+      Collections.sort(sortByNameList, new NameComparator());
+      return sortByNameList;
+    }
 }
 
 
