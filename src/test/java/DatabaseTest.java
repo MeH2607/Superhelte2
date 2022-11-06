@@ -132,5 +132,10 @@ class DatabaseTest {
                 () -> assertEquals(expectedNameOfNewIndex0, db.getHeroDatabase().get(0).getName())
         );
     }
+
+    @Test
+    public void sortByHeroNameTest(){
+
+    }
 }
 
