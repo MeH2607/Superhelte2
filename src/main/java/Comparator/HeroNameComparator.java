@@ -13,6 +13,6 @@ public class HeroNameComparator implements Comparator<SuperHero> {
         else if (hero2.getSuperheroName() == null) {
             return -1;
         }
-        return hero2.getSuperheroName().compareTo(hero1.getSuperheroName()); //Hvorfor virker denne her omvendt :sob:
+        return hero1.getSuperheroName().compareToIgnoreCase(hero2.getSuperheroName()); //Hvorfor virker denne her omvendt :sob:
     }
 }

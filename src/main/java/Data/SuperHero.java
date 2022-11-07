@@ -2,7 +2,7 @@ package Data;
 
 import java.util.Scanner;
 
-public class SuperHero {
+public class SuperHero{
 
     private String name;
     private String superheroName;
@@ -58,7 +58,7 @@ public class SuperHero {
         this.creationYear = creationYear;
     }
 
-    public boolean isHuman() {
+    public boolean getIsHuman() {
         return human;
     }
 
