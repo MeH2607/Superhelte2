@@ -141,7 +141,7 @@
       <workItem from="1667207418082" duration="16000" />
       <workItem from="1667207566478" duration="7336000" />
       <workItem from="1667551306146" duration="7726000" />
-      <workItem from="1667748454893" duration="3920000" />
+      <workItem from="1667748454893" duration="3943000" />
     </task>
     <task id="LOCAL-00001" summary="Har oprettet SuperHero klassen, og opretter en SuperHero i Main. Glemte måske at commit noget tidligere...">
       <created>1662974800912</created>
@@ -346,7 +346,14 @@
       <option name="project" value="LOCAL" />
       <updated>1667752901038</updated>
     </task>
-    <option name="localTasksCounter" value="30" />
+    <task id="LOCAL-00030" summary="sortByName lavet. Tester SortByHeroName">
+      <created>1667807484914</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1667807484914</updated>
+    </task>
+    <option name="localTasksCounter" value="31" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
