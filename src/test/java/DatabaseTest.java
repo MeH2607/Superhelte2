@@ -1,9 +1,12 @@
+import Comparator.HeroNameComparator;
 import Data.Database;
 import Data.SuperHero;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -135,7 +138,14 @@ class DatabaseTest {
 
     @Test
     public void sortByHeroNameTest(){
+        ArrayList<SuperHero> heroTestList = db.getHeroDatabase();
 
+
+        Collections.sort( heroTestList, new HeroNameComparator());
+
+
+        assertTrue(heroTestList.get(4).getSuperheroName() == null);
+        assertTrue(heroTestList.get(3).getSuperheroName() == null);
     }
 }
 

@@ -20,6 +20,7 @@ public class SuperHero {
 
     public SuperHero(String name, String superheroPower, boolean human, int creationYear) {
         this.name = name;
+        superheroName = null;
         this.superheroPower = superheroPower;
         this.human = human;
         this.creationYear = creationYear;
