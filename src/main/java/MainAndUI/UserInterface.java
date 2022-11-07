@@ -34,33 +34,19 @@ public class UserInterface {
 
             menuValg = readInt();
 
-
             switch (menuValg) {
-                case 1:
-                    createAndAddHeroLocalMethod();
-                    break;
-                case 2:
-                    showAllHeroesLocalMethod();
-                    break;
-                case 3:
-                    findHeroListLocalMethod();
-                    break;
-                case 4:
-                    editHeroLocalMethod();
-                    break;
-                case 5:
-                    deleteHeroLocalMethod();
-                    break;
-                case 6:
-                    sortByNameLocalMethod();
-                    break;
-                case 9:
+                case 1 -> createAndAddHeroLocalMethod();
+                case 2 -> showAllHeroesLocalMethod();
+                case 3 -> findHeroListLocalMethod();
+                case 4 -> editHeroLocalMethod();
+                case 5 -> deleteHeroLocalMethod();
+                case 6 -> sortingMenu();
+                case 9 -> {
                     System.out.println("\nPå gensyn");
                     System.exit(0);
-                    break;
-                default:
-                    System.out.println("Ugyldigt valg");
-                    break;
+                }
+
+                default -> System.out.println("Ugyldigt valg");
             }
         } while (menuValg != 9);
     }
@@ -134,7 +120,7 @@ public class UserInterface {
                 } else {
                     System.out.println("Superheltenavn: " + h.getSuperheroName());
                 }
-                if (h.isHuman() == true) {
+                if (h.getIsHuman() == true) {
                     System.out.println("\nMenneske?: Ja");
                 } else {
                     System.out.println("\nMenneske?: Nej");
@@ -165,7 +151,7 @@ public class UserInterface {
                     superHeroName = h.getSuperheroName();
                 }
 
-                if (h.isHuman() == true) {
+                if (h.getIsHuman() == true) {
                     isHuman = "Ja";
                 } else {
                     isHuman = "Nej";
@@ -324,11 +310,59 @@ public class UserInterface {
         }
     }
 
+    public void sortByHeroPowerLocalMethod() {
+        for (SuperHero hero : controller.sortBySuperHeroPower()) {
+            System.out.println(hero.toString());
+        }
+    }
+    public void sortByYearLocalMethod() {
+        for (SuperHero hero : controller.sortByCreationYear()) {
+            System.out.println(hero.toString());
+        }
+    }
+    public void sortByIsHumanLocalMethod() {
+        for (SuperHero hero : controller.sortByHuman()) {
+            System.out.println(hero.toString());
+        }
+    }
     public void sortByHeroNameLocalMethod() {
         for (SuperHero hero : controller.sortByHeroName()) {
             System.out.println(hero.toString());
         }
     }
+    public void sortByPrimarySecondaryMethod() {
+        for (SuperHero hero : controller.sortByPrimarySecondary()) {
+            System.out.println(hero.toString());
+        }
+    }
+
+    private void sortingMenu(){
+        int menuValg = 0;
+
+        System.out.println("Vælg sorteringskriterie\n");
+        do {
+            System.out.println("""
+                    1. Navn
+                    2. Heltenavn
+                    3. Superkraft
+                    4. Er menneske
+                    5. Oprindelses år
+                    6. PrimarySecondaryComparator
+                    9. afslut
+                    """);
+            menuValg = readInt();
+        switch (menuValg){
+            case 1 -> sortByNameLocalMethod();
+            case 2 -> sortByHeroNameLocalMethod();
+            case 3 -> sortByHeroPowerLocalMethod();
+            case 4 -> sortByIsHumanLocalMethod();
+            case 5 -> sortByYearLocalMethod();
+            case 6 -> sortByPrimarySecondaryMethod();
+            default -> System.out.println("Ugyldig input");
+        }
+    }
+        while(menuValg != 9);
+}
 }
 
 

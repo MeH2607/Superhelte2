@@ -4,14 +4,26 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c3f9186f-b8e2-45ab-9d3b-f48aab031d63" name="Changes" comment="Merge remote-tracking branch 'github/main'&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml&#10;#&#9;src/main/java/Comparator/HeroNameComparator.java&#10;#&#9;src/test/java/DatabaseTest.java">
+    <list default="true" id="c3f9186f-b8e2-45ab-9d3b-f48aab031d63" name="Changes" comment="User story #12">
+      <change afterPath="$PROJECT_DIR$/src/test/java/Comparator/HeroNameComparatorTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SuperHeroDatabase.csv" beforeDir="false" afterPath="$PROJECT_DIR$/SuperHeroDatabase.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Comparator/HeroNameComparator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Comparator/HeroNameComparator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Data/SuperHero.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Data/SuperHero.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/MainAndUI/UserInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MainAndUI/UserInterface.java" afterDir="false" />
+    </list>
+    <list id="6dc2d6b3-1fdb-4375-bc5a-5e65abb95af1" name="Changes by Asger_studie" comment="">
+      <change beforePath="$PROJECT_DIR$/SuperHeroDatabase.csv" beforeDir="false" afterPath="$PROJECT_DIR$/SuperHeroDatabase.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/MainAndUI/UserInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MainAndUI/UserInterface.java" afterDir="false" />
+    </list>
+    <list id="d955141f-ff49-4f90-a496-792900b8c724" name="Changes by jonat" comment="">
+      <change beforePath="$PROJECT_DIR$/src/main/java/Comparator/HeroNameComparator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Comparator/HeroNameComparator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Comparator/NameComparator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Comparator/NameComparator.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Controller/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controller/Controller.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Data/Database.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Data/Database.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Data/Filehandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Data/Filehandler.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/MainAndUI/UserInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MainAndUI/UserInterface.java" afterDir="false" />
+    </list>
+    <list id="a5b44129-72c5-4db7-9c4e-55f96e26d9de" name="Changes by paulk" comment="">
+      <change beforePath="$PROJECT_DIR$/src/main/java/Data/SuperHero.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Data/SuperHero.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -28,6 +40,35 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="LineStatusTrackerManager">
+    <file path="$PROJECT_DIR$/src/main/java/MainAndUI/UserInterface.java">
+      <ranges>
+        <range start1="30" end1="31" start2="30" end2="31" changelist="d955141f-ff49-4f90-a496-792900b8c724" />
+        <range start1="36" end1="37" start2="36" end2="36" changelist="6dc2d6b3-1fdb-4375-bc5a-5e65abb95af1" />
+        <range start1="38" end1="57" start2="37" end2="44" changelist="c3f9186f-b8e2-45ab-9d3b-f48aab031d63" />
+        <range start1="59" end1="63" start2="46" end2="49" changelist="c3f9186f-b8e2-45ab-9d3b-f48aab031d63" />
+        <range start1="136" end1="137" start2="122" end2="123" changelist="c3f9186f-b8e2-45ab-9d3b-f48aab031d63" />
+        <range start1="167" end1="168" start2="153" end2="154" changelist="c3f9186f-b8e2-45ab-9d3b-f48aab031d63" />
+        <range start1="326" end1="328" start2="312" end2="314" changelist="c3f9186f-b8e2-45ab-9d3b-f48aab031d63" />
+        <range start1="331" end1="331" start2="317" end2="363" changelist="c3f9186f-b8e2-45ab-9d3b-f48aab031d63" />
+        <range start1="332" end1="332" start2="364" end2="365" changelist="c3f9186f-b8e2-45ab-9d3b-f48aab031d63" />
+      </ranges>
+    </file>
+    <file path="$PROJECT_DIR$/src/main/java/Data/SuperHero.java">
+      <ranges>
+        <range start1="4" end1="5" start2="4" end2="5" changelist="c3f9186f-b8e2-45ab-9d3b-f48aab031d63" />
+        <range start1="60" end1="61" start2="60" end2="61" changelist="c3f9186f-b8e2-45ab-9d3b-f48aab031d63" />
+        <range start1="68" end1="68" start2="68" end2="79" changelist="a5b44129-72c5-4db7-9c4e-55f96e26d9de" />
+        <range start1="71" end1="72" start2="82" end2="83" changelist="a5b44129-72c5-4db7-9c4e-55f96e26d9de" />
+      </ranges>
+    </file>
+    <file path="$PROJECT_DIR$/src/main/java/Comparator/HeroNameComparator.java">
+      <ranges>
+        <range start1="0" end1="1" start2="0" end2="0" changelist="d955141f-ff49-4f90-a496-792900b8c724" />
+        <range start1="15" end1="16" start2="14" end2="15" changelist="c3f9186f-b8e2-45ab-9d3b-f48aab031d63" />
+      </ranges>
+    </file>
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -49,32 +90,33 @@
     <option name="showLibraryContents" value="true" />
     <option name="showMembers" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;codeWithMe.voiceChat.enabledByDefault&quot;: &quot;false&quot;,
-    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary&quot;: &quot;JUnit5&quot;,
-    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5&quot;: &quot;&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/moham/IdeaProjects&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
-    &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;Errors&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "codeWithMe.voiceChat.enabledByDefault": "false",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
+    "last_opened_file_path": "C:/Users/moham/IdeaProjects",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0",
+    "run.code.analysis.last.selected.profile": "pProject Default",
+    "settings.editor.selected.configurable": "preferences.lookFeel"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CreateTestDialog.Recents.Supers">
       <recent name="" />
     </key>
     <key name="CreateTestDialog.RecentsKey">
+      <recent name="Comparator" />
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.MainAndUI.Main">
+  <component name="RunManager" selected="JUnit.HeroNameComparatorTest.compareWithoutNull">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Main" />
       <module name="SuperhelteProjekt" />
@@ -115,11 +157,17 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="FilehandlerTest.saveSuperHeroesToFile" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="HeroNameComparatorTest.compareWithoutNull" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="SuperhelteProjekt" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="FilehandlerTest" />
-      <option name="METHOD_NAME" value="saveSuperHeroesToFile" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Comparator.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="Comparator" />
+      <option name="MAIN_CLASS_NAME" value="Comparator.HeroNameComparatorTest" />
+      <option name="METHOD_NAME" value="compareWithoutNull" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -129,9 +177,9 @@
       <list>
         <item itemvalue="Application.MainAndUI.Main" />
         <item itemvalue="Application.Main" />
+        <item itemvalue="JUnit.HeroNameComparatorTest.compareWithoutNull" />
         <item itemvalue="JUnit.DatabaseTest.sortByHeroNameTest" />
         <item itemvalue="JUnit.FilehandlerTest.readSuperHeroesFromFile" />
-        <item itemvalue="JUnit.FilehandlerTest.saveSuperHeroesToFile" />
       </list>
     </recent_temporary>
   </component>
@@ -306,7 +354,14 @@
       <option name="project" value="LOCAL" />
       <updated>1667807603592</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="User story #12">
+      <created>1667809326473</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1667809326473</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -348,7 +403,8 @@
     <MESSAGE value="Refaktoreret koden så den arbejder med controller. Andre finpudsninger" />
     <MESSAGE value="slettet scanner og testData fra database. Slettet FindHero i databasen og UserInterface. Slettet overflødig kommentarer.&#10;Gjort scanner private." />
     <MESSAGE value="Merge remote-tracking branch 'github/main'&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml&#10;#&#9;src/main/java/Comparator/HeroNameComparator.java&#10;#&#9;src/test/java/DatabaseTest.java" />
-    <option name="LAST_COMMIT_MESSAGE" value="Merge remote-tracking branch 'github/main'&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml&#10;#&#9;src/main/java/Comparator/HeroNameComparator.java&#10;#&#9;src/test/java/DatabaseTest.java" />
+    <MESSAGE value="User story #12" />
+    <option name="LAST_COMMIT_MESSAGE" value="User story #12" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
