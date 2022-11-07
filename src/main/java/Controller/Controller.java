@@ -56,6 +56,9 @@ public class Controller {
         return database.sortByName();
     }
 
+    public ArrayList<SuperHero> sortByHeroName(){
+        return database.sortByHeroName();
+    }
 }
 
 

@@ -1,5 +1,6 @@
 package Data;
 
+import Comparator.HeroNameComparator;
 import Comparator.NameComparator;
 
 import java.util.ArrayList;
@@ -60,10 +61,17 @@ public class Database {
     }
 
     public ArrayList<SuperHero> sortByName(){
-        ArrayList<SuperHero> sortByNameList = new ArrayList<>();
-        sortByNameList.addAll(heroDatabase);
-      Collections.sort(sortByNameList, new NameComparator());
-      return sortByNameList;
+        ArrayList<SuperHero> sortedList = new ArrayList<>();
+        sortedList.addAll(heroDatabase);
+        Collections.sort(sortedList, new NameComparator());
+        return sortedList;
+    }
+
+    public ArrayList<SuperHero> sortByHeroName(){
+        ArrayList<SuperHero> sortedList = new ArrayList<>();
+        sortedList.addAll(heroDatabase);
+        Collections.sort(sortedList, new HeroNameComparator());
+        return sortedList;
     }
 }
 

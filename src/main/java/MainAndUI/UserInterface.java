@@ -5,6 +5,7 @@ import Data.SuperHero;
 
 import java.util.ArrayList;
 import java.util.Scanner;
+
 public class UserInterface {
     private Scanner sc = new Scanner(System.in);
     private Controller controller = new Controller();
@@ -27,6 +28,7 @@ public class UserInterface {
                     3. Søg på helte
                     4. Rediger helte info
                     5. Slet helt
+                    6. Sorter efter civilnavn
                     9. afslut
                     """);
 
@@ -147,7 +149,7 @@ public class UserInterface {
         String searchName;
         System.out.println("* Søg efter Superhelt *");
         searchName = sc.nextLine();
-        ArrayList<SuperHero>localHeroList = controller.searchForHeroList(searchName);
+        ArrayList<SuperHero> localHeroList = controller.searchForHeroList(searchName);
 
         for (SuperHero h : localHeroList) {
             if (h != null) {
@@ -175,7 +177,7 @@ public class UserInterface {
                         Menneske?: %s
                         Superstyrke: %s
                         Oprindelsesår: %d
-                        
+                                                
                         """, name, superHeroName, isHuman, superStyrke, creationYear);
 
             }
@@ -254,7 +256,7 @@ public class UserInterface {
                         break;
                     case 5:
                         System.out.println("Rediger " + hero.getCreationYear() + " eller tryk enter for at fortryde");
-                       //TODO til mohamed, test dette stykke kode
+                        //TODO til mohamed, test dette stykke kode
                         int newYear = 0;
                         newYear = readInt();
                         if (newYear == 0) {
@@ -286,7 +288,7 @@ public class UserInterface {
 
             //Modtager bruger input for hvem der skal slettes og en advarsel.
             int v1 = readInt();
-            SuperHero heroToDelete = localHeroList.get(v1-1);
+            SuperHero heroToDelete = localHeroList.get(v1 - 1);
             System.out.println("Er du sikker på de vil slette " + heroToDelete.getName() +
                     "?\n1. Slet " + heroToDelete.getName() + "\n2. Fortryd");
 
@@ -316,9 +318,15 @@ public class UserInterface {
         return result;
     }
 
-    public void sortByNameLocalMethod(){
-        for(SuperHero hero : controller.sortByName()){
+    public void sortByNameLocalMethod() {
+        for (SuperHero hero : controller.sortByName()) {
             System.out.println(hero.toString() + "\n");
+        }
+    }
+
+    public void sortByHeroNameLocalMethod() {
+        for (SuperHero hero : controller.sortByHeroName()) {
+            System.out.println(hero.toString());
         }
     }
 }
