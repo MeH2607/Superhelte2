@@ -22,6 +22,7 @@ public class UserInterface {
         System.out.println("Velkommen til Superhelte databasen\n");
         do {
             System.out.println("""
+                                        
                     Hvad vil du gøre?
                     1. Opret superhelt
                     2. Vis alle helte
@@ -45,7 +46,6 @@ public class UserInterface {
                     System.out.println("\nPå gensyn");
                     System.exit(0);
                 }
-
                 default -> System.out.println("Ugyldigt valg");
             }
         } while (menuValg != 9);
@@ -77,14 +77,9 @@ public class UserInterface {
             System.out.println("\nTast 1 for ja\nTast 2 for nej");
             valg = sc.nextInt();
             switch (valg) {
-                case 1:
-                    isHuman = true;
-                    break;
-                case 2:
-                    isHuman = false;
-                    break;
-                default:
-                    System.out.println("ugyldigt input, prøv igen");
+                case 1 -> isHuman = true;
+                case 2 -> isHuman = false;
+                default -> System.out.println("ugyldigt input, prøv igen");
             }
         } while (valg != 1 && valg != 2);
 
@@ -113,20 +108,9 @@ public class UserInterface {
         if (list.isEmpty()) {
             System.out.println("Ingen helte i databasen");
         } else {
-            for (SuperHero h : list) {
-                System.out.println("Civilnavn : " + h.getName());
-                if (h.getSuperheroName() == null) {
-                    System.out.println("\nIntet heltenavn");
-                } else {
-                    System.out.println("Superheltenavn: " + h.getSuperheroName());
-                }
-                if (h.getIsHuman() == true) {
-                    System.out.println("\nMenneske?: Ja");
-                } else {
-                    System.out.println("\nMenneske?: Nej");
-                }
-                System.out.println("\nSuperstyrke: " + h.getSuperheroPower());
-                System.out.println("\nOprindelsesår: " + h.getCreationYear() + "\n\n");
+        listHeader();
+        for (SuperHero h : list) {
+            System.out.println(h);
             }
         }
     }
@@ -241,11 +225,11 @@ public class UserInterface {
                         } while (valg2 != 1 && valg2 != 2);
                         break;
                     case 5:
+                        //TODO Ret denne til at modtage tom input for at skippe
                         System.out.println("Rediger " + hero.getCreationYear() + " eller tryk enter for at fortryde");
-                        //TODO til mohamed, test dette stykke kode
-                        int newYear = 0;
-                        newYear = readInt();
-                        if (newYear == 0) {
+                        Integer newYear = 0;
+                        newYear = sc.nextInt();
+                        if (newYear == null) {
                             hero.setCreationYear(newYear);
                         }
                         break;
@@ -305,53 +289,102 @@ public class UserInterface {
     }
 
     public void sortByNameLocalMethod() {
+        listHeader();
         for (SuperHero hero : controller.sortByName()) {
-            System.out.println(hero.toString() + "\n");
+            System.out.println(hero.toString());
         }
     }
 
     public void sortByHeroPowerLocalMethod() {
+        listHeader();
         for (SuperHero hero : controller.sortBySuperHeroPower()) {
             System.out.println(hero.toString());
         }
     }
+
     public void sortByYearLocalMethod() {
+        listHeader();
         for (SuperHero hero : controller.sortByCreationYear()) {
             System.out.println(hero.toString());
         }
     }
+
     public void sortByIsHumanLocalMethod() {
+        listHeader();
         for (SuperHero hero : controller.sortByHuman()) {
             System.out.println(hero.toString());
         }
     }
+
     public void sortByHeroNameLocalMethod() {
+        listHeader();
         for (SuperHero hero : controller.sortByHeroName()) {
             System.out.println(hero.toString());
         }
     }
-    public void sortByPrimarySecondaryMethod() {
-        for (SuperHero hero : controller.sortByPrimarySecondary()) {
+
+    private void sortByPrimarySecondaryMethod() {
+        int menuValg = 0;
+        int valg1 = 0;
+        int valg2 = 0;
+
+        System.out.println("Vælg primære sorteringskriterie\n");
+        System.out.println("""
+                1. Navn
+                2. Heltenavn
+                3. Superkraft
+                4. Er menneske
+                5. Oprindelses år
+                9. afslut
+                """);
+        menuValg = readInt();
+        switch (menuValg) {
+            case 1 -> valg1 = 1;
+            case 2 -> valg1 = 2;
+            case 3 -> valg1 = 3;
+            case 4 -> valg1 = 4;
+            case 5 -> valg1 = 5;
+            default -> System.out.println("Ugyldig input");
+        }
+        System.out.println("Vælg sekundære sorteringskriterie\n");
+        System.out.println("""
+                1. Navn
+                2. Heltenavn
+                3. Superkraft
+                4. Er menneske
+                5. Oprindelses år
+                9. afslut
+                """);
+        menuValg = readInt();
+        switch (menuValg) {
+            case 1 -> valg2 = 1;
+            case 2 -> valg2 = 2;
+            case 3 -> valg2 = 3;
+            case 4 -> valg2 = 4;
+            case 5 -> valg2 = 5;
+            default -> System.out.println("Ugyldig input");
+        }
+        listHeader();
+        for (SuperHero hero : controller.sortByPrimarySecondary(valg1, valg2)) {
             System.out.println(hero.toString());
         }
     }
 
-    private void sortingMenu(){
+    private void sortingMenu() {
         int menuValg = 0;
 
-        System.out.println("Vælg sorteringskriterie\n");
-        do {
-            System.out.println("""
-                    1. Navn
-                    2. Heltenavn
-                    3. Superkraft
-                    4. Er menneske
-                    5. Oprindelses år
-                    6. PrimarySecondaryComparator
-                    9. afslut
-                    """);
-            menuValg = readInt();
-        switch (menuValg){
+        System.out.println("Vælg primære sorteringskriterie\n");
+        System.out.println("""
+                1. Navn
+                2. Heltenavn
+                3. Superkraft
+                4. Er menneske
+                5. Oprindelses år
+                6. sorter mellem primær og sekundær
+                9. afslut
+                """);
+        menuValg = readInt();
+        switch (menuValg) {
             case 1 -> sortByNameLocalMethod();
             case 2 -> sortByHeroNameLocalMethod();
             case 3 -> sortByHeroPowerLocalMethod();
@@ -361,8 +394,10 @@ public class UserInterface {
             default -> System.out.println("Ugyldig input");
         }
     }
-        while(menuValg != 9);
-}
+
+    private void listHeader() {
+        System.out.printf("┃ %-20s │ %-15s │ %-20s │ %-8s │ %-13s ┃ %n", "name", "superheroName", "superheroPower", "Is human", "creationYear");
+    }
 }
 
 
