@@ -225,6 +225,7 @@ public class UserInterface {
                         } while (valg2 != 1 && valg2 != 2);
                         break;
                     case 5:
+                        //TODO Ret denne til at modtage tom input for at skippe
                         System.out.println("Rediger " + hero.getCreationYear() + " eller tryk enter for at fortryde");
                         String newYear;
                         newYear = sc.nextLine();
