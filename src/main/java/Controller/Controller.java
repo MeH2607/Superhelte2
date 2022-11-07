@@ -72,8 +72,8 @@ public class Controller {
         return database.sortBySuperHeroPower();
     }
 
-    public ArrayList<SuperHero> sortByPrimarySecondary(){
-        return database.sortByPrimarySecondary();
+    public ArrayList<SuperHero> sortByPrimarySecondary(int valg1, int valg2){
+        return database.sortByPrimarySecondary(valg1, valg2);
     }
 
 

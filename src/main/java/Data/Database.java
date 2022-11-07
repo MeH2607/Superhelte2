@@ -1,15 +1,14 @@
 package Data;
-
 import Comparator.*;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Comparator;
 
 public class Database {
 
     private ArrayList<SuperHero> heroDatabase = new ArrayList<>();
     private ArrayList<SuperHero> findSuperheroList = new ArrayList<>();
-
 
 
     public ArrayList<SuperHero> getHeroDatabase() {
@@ -31,6 +30,7 @@ public class Database {
     public void addToDatabase(String name, String superheroPower, boolean human, int creationYear) {
         heroDatabase.add(new SuperHero(name, superheroPower, human, creationYear));
     }
+
     //Samler en gruppe af helte, når man skal gemme resultater. Bruges til når der skal redigeres.
     public ArrayList<SuperHero> searchForHeroList(String searchName) {
         SuperHero hero;
@@ -59,47 +59,73 @@ public class Database {
         heroDatabase.remove(deleteOnIndex);
     }
 
-    public ArrayList<SuperHero> sortByName(){
+    public ArrayList<SuperHero> sortByName() {
         ArrayList<SuperHero> sortedList = new ArrayList<>();
         sortedList.addAll(heroDatabase);
         Collections.sort(sortedList, new NameComparator());
         return sortedList;
     }
 
-    public ArrayList<SuperHero> sortByHeroName(){
+    public ArrayList<SuperHero> sortByHeroName() {
         ArrayList<SuperHero> sortedList = new ArrayList<>();
         sortedList.addAll(heroDatabase);
         Collections.sort(sortedList, new HeroNameComparator());
         return sortedList;
     }
 
-    public ArrayList<SuperHero> sortByCreationYear (){
+    public ArrayList<SuperHero> sortByCreationYear() {
         ArrayList<SuperHero> sortedlist = new ArrayList<>();
         sortedlist.addAll(heroDatabase);
         Collections.sort(sortedlist, new CreationYearComparator());
         return sortedlist;
     }
 
-    public ArrayList<SuperHero> sortByHuman (){
+    public ArrayList<SuperHero> sortByHuman() {
         ArrayList<SuperHero> sortedlist = new ArrayList<>();
         sortedlist.addAll(heroDatabase);
         Collections.sort(sortedlist, new HumanComparator().reversed());
         return sortedlist;
     }
 
-    public ArrayList<SuperHero> sortBySuperHeroPower (){
+    public ArrayList<SuperHero> sortBySuperHeroPower() {
         ArrayList<SuperHero> sortedlist = new ArrayList<>();
         sortedlist.addAll(heroDatabase);
         Collections.sort(sortedlist, new SuperHeroPowerComparator());
         return sortedlist;
     }
-    public ArrayList<SuperHero> sortByPrimarySecondary (){
+
+    public ArrayList<SuperHero> sortByPrimarySecondary(int a, int b) {
         ArrayList<SuperHero> sortedlist = new ArrayList<>();
         sortedlist.addAll(heroDatabase);
-        Collections.sort(sortedlist, new PrimarySecondaryComparator());
+
+        Comparator<SuperHero> comparator1 = null;
+        Comparator<SuperHero> comparator2 = null;
+
+        switch (a) {
+            case 1 -> comparator1 = new NameComparator();
+            case 2 -> comparator1 = new HeroNameComparator();
+            case 3 -> comparator1 = new SuperHeroPowerComparator();
+            case 4 -> comparator1 = new HumanComparator();
+            case 5 -> comparator1 = new CreationYearComparator();
+        }
+
+        switch (b) {
+            case 1 -> comparator2 = new NameComparator();
+            case 2 -> comparator2 = new HeroNameComparator();
+            case 3 -> comparator2 = new SuperHeroPowerComparator();
+            case 4 -> comparator2 = new HumanComparator();
+            case 5 -> comparator2 = new CreationYearComparator();
+        }
+
+        Collections.sort(sortedlist, comparator1.thenComparing(comparator2));
+
         return sortedlist;
     }
+
+
 }
+
+
 
 
 
