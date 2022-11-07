@@ -66,9 +66,20 @@ public class SuperHero{
         this.human = human;
     }
 
+
+    public String PrintSuperHeroName() {
+        String s;
+        if (superheroName == null) {
+            return "* Har ikke superheltenavn *";
+        } else {
+            return superheroName;
+        }
+    }
+
+
     @Override
     public String toString() {
         return
-                 name  + "," + superheroName + "," + superheroPower + "," + human + "," + creationYear;
+                 "[" + "Civil navn: " +  name  + ", " + "Superheltenavn: " + superheroName + ", " + "Superheltekraft: " + superheroPower + ", " + "Er menneske: " + human + ", " + "Oprindelses år: " + creationYear + "] ";
     }
 }
