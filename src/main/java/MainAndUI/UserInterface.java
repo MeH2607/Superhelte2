@@ -28,7 +28,7 @@ public class UserInterface {
                     3. Søg på helte
                     4. Rediger helte info
                     5. Slet helt
-                    6. Sorter efter civilnavn
+                    6. Sorter 
                     9. afslut
                     """);
 

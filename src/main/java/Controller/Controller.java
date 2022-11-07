@@ -59,6 +59,25 @@ public class Controller {
     public ArrayList<SuperHero> sortByHeroName(){
         return database.sortByHeroName();
     }
+
+    public ArrayList<SuperHero> sortByCreationYear(){
+        return database.sortByCreationYear();
+    }
+
+    public ArrayList<SuperHero> sortByHuman(){
+        return database.sortByHuman();
+    }
+
+    public ArrayList<SuperHero> sortBySuperHeroPower(){
+        return database.sortBySuperHeroPower();
+    }
+
+    public ArrayList<SuperHero> sortByPrimarySecondary(){
+        return database.sortByPrimarySecondary();
+    }
+
+
+
 }
 
 
