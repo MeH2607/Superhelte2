@@ -76,11 +76,15 @@ public class SuperHero{
         }
     }
 
+    public String toFile(){
+        return name + ", " + superheroName + ", " +  superheroPower + ", " +  human + ", " + creationYear;
+    }
 
     @Override
     public String toString() {
         return String.format("┃ %-20s │ %-15s │ %-20s │ %-8b │ %-13d ┃", name, superheroName, superheroPower, human, creationYear);
                 // "[" + "Civil navn: " +  name  + ", " + "Superheltenavn: " + superheroName + ", " + "Superheltekraft: " + superheroPower + ", " + "Er menneske: " + human + ", " + "Oprindelses år: " + creationYear + "] ";
     }
+
 }
 // "%n┃%-6s │ %6.1f │ %8.1f │ %7.1f ┃", name, superheroName, superheroPower, human, creationYear)
