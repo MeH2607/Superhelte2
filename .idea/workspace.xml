@@ -4,22 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c3f9186f-b8e2-45ab-9d3b-f48aab031d63" name="Changes" comment="User Story #13">
+    <list default="true" id="c3f9186f-b8e2-45ab-9d3b-f48aab031d63" name="Changes" comment="User story #14">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Controller/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controller/Controller.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Data/Database.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Data/Database.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/MainAndUI/UserInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MainAndUI/UserInterface.java" afterDir="false" />
-    </list>
-    <list id="6dc2d6b3-1fdb-4375-bc5a-5e65abb95af1" name="Changes by Asger_studie" comment="User story #13">
+      <change beforePath="$PROJECT_DIR$/SuperHeroDatabase.csv" beforeDir="false" afterPath="$PROJECT_DIR$/SuperHeroDatabase.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Data/Filehandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Data/Filehandler.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Data/SuperHero.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Data/SuperHero.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/MainAndUI/UserInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MainAndUI/UserInterface.java" afterDir="false" />
     </list>
-    <list id="5d361159-9af2-4190-a5f2-8b3b631e9cc8" name="Changes by jonat" comment="">
-      <change beforePath="$PROJECT_DIR$/src/main/java/MainAndUI/UserInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MainAndUI/UserInterface.java" afterDir="false" />
-    </list>
-    <list id="a5b44129-72c5-4db7-9c4e-55f96e26d9de" name="Changes by paulk" comment="Changes by paulk">
-      <change beforePath="$PROJECT_DIR$/src/main/java/Data/Database.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Data/Database.java" afterDir="false" />
-    </list>
+    <list id="6dc2d6b3-1fdb-4375-bc5a-5e65abb95af1" name="Changes by Asger_studie" comment="User story #13" />
+    <list id="5d361159-9af2-4190-a5f2-8b3b631e9cc8" name="Changes by jonat" comment="User Sotry #14" />
+    <list id="a5b44129-72c5-4db7-9c4e-55f96e26d9de" name="Changes by paulk" comment="User Story #14" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -35,49 +28,6 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
-  </component>
-  <component name="LineStatusTrackerManager">
-    <file path="$PROJECT_DIR$/src/main/java/MainAndUI/UserInterface.java">
-      <ranges>
-        <range start1="24" end1="24" start2="24" end2="25" changelist="c3f9186f-b8e2-45ab-9d3b-f48aab031d63" />
-        <range start1="47" end1="48" start2="48" end2="48" changelist="6dc2d6b3-1fdb-4375-bc5a-5e65abb95af1" />
-        <range start1="79" end1="87" start2="79" end2="82" changelist="6dc2d6b3-1fdb-4375-bc5a-5e65abb95af1" />
-        <range start1="115" end1="129" start2="110" end2="113" changelist="5d361159-9af2-4190-a5f2-8b3b631e9cc8" />
-        <range start1="244" end1="245" start2="228" end2="228" changelist="c3f9186f-b8e2-45ab-9d3b-f48aab031d63" />
-        <range start1="246" end1="247" start2="229" end2="230" changelist="c3f9186f-b8e2-45ab-9d3b-f48aab031d63" />
-        <range start1="307" end1="307" start2="290" end2="291" changelist="c3f9186f-b8e2-45ab-9d3b-f48aab031d63" />
-        <range start1="308" end1="309" start2="292" end2="293" changelist="c3f9186f-b8e2-45ab-9d3b-f48aab031d63" />
-        <range start1="313" end1="313" start2="297" end2="298" changelist="c3f9186f-b8e2-45ab-9d3b-f48aab031d63" />
-        <range start1="317" end1="317" start2="302" end2="303" changelist="c3f9186f-b8e2-45ab-9d3b-f48aab031d63" />
-        <range start1="318" end1="318" start2="304" end2="305" changelist="c3f9186f-b8e2-45ab-9d3b-f48aab031d63" />
-        <range start1="322" end1="322" start2="309" end2="310" changelist="c3f9186f-b8e2-45ab-9d3b-f48aab031d63" />
-        <range start1="323" end1="323" start2="311" end2="312" changelist="c3f9186f-b8e2-45ab-9d3b-f48aab031d63" />
-        <range start1="327" end1="327" start2="316" end2="317" changelist="c3f9186f-b8e2-45ab-9d3b-f48aab031d63" />
-        <range start1="328" end1="328" start2="318" end2="319" changelist="c3f9186f-b8e2-45ab-9d3b-f48aab031d63" />
-        <range start1="332" end1="337" start2="323" end2="323" changelist="c3f9186f-b8e2-45ab-9d3b-f48aab031d63" />
-        <range start1="338" end1="339" start2="324" end2="325" changelist="c3f9186f-b8e2-45ab-9d3b-f48aab031d63" />
-        <range start1="340" end1="340" start2="326" end2="328" changelist="c3f9186f-b8e2-45ab-9d3b-f48aab031d63" />
-        <range start1="341" end1="360" start2="329" end2="345" changelist="c3f9186f-b8e2-45ab-9d3b-f48aab031d63" />
-        <range start1="362" end1="365" start2="347" end2="399" changelist="c3f9186f-b8e2-45ab-9d3b-f48aab031d63" />
-      </ranges>
-    </file>
-    <file path="$PROJECT_DIR$/src/main/java/Data/Database.java">
-      <ranges>
-        <range start1="1" end1="2" start2="1" end2="1" changelist="a5b44129-72c5-4db7-9c4e-55f96e26d9de" />
-        <range start1="6" end1="6" start2="5" end2="6" changelist="a5b44129-72c5-4db7-9c4e-55f96e26d9de" />
-        <range start1="13" end1="14" start2="13" end2="13" changelist="c3f9186f-b8e2-45ab-9d3b-f48aab031d63" />
-        <range start1="33" end1="33" start2="32" end2="33" changelist="c3f9186f-b8e2-45ab-9d3b-f48aab031d63" />
-        <range start1="61" end1="62" start2="61" end2="62" changelist="c3f9186f-b8e2-45ab-9d3b-f48aab031d63" />
-        <range start1="68" end1="69" start2="68" end2="69" changelist="c3f9186f-b8e2-45ab-9d3b-f48aab031d63" />
-        <range start1="75" end1="76" start2="75" end2="76" changelist="c3f9186f-b8e2-45ab-9d3b-f48aab031d63" />
-        <range start1="82" end1="83" start2="82" end2="83" changelist="c3f9186f-b8e2-45ab-9d3b-f48aab031d63" />
-        <range start1="89" end1="90" start2="89" end2="90" changelist="c3f9186f-b8e2-45ab-9d3b-f48aab031d63" />
-        <range start1="95" end1="96" start2="95" end2="97" changelist="c3f9186f-b8e2-45ab-9d3b-f48aab031d63" />
-        <range start1="98" end1="99" start2="99" end2="121" changelist="c3f9186f-b8e2-45ab-9d3b-f48aab031d63" />
-        <range start1="101" end1="101" start2="123" end2="125" changelist="a5b44129-72c5-4db7-9c4e-55f96e26d9de" />
-        <range start1="102" end1="102" start2="126" end2="128" changelist="a5b44129-72c5-4db7-9c4e-55f96e26d9de" />
-      </ranges>
-    </file>
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -412,7 +362,35 @@
       <option name="project" value="LOCAL" />
       <updated>1667815749120</updated>
     </task>
-    <option name="localTasksCounter" value="30" />
+    <task id="LOCAL-00030" summary="User Story #14">
+      <created>1667819962233</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1667819962234</updated>
+    </task>
+    <task id="LOCAL-00031" summary="User story #13">
+      <created>1667819971129</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1667819971129</updated>
+    </task>
+    <task id="LOCAL-00032" summary="User Sotry #14">
+      <created>1667819990122</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1667819990122</updated>
+    </task>
+    <task id="LOCAL-00033" summary="User Story #14">
+      <created>1667820001403</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1667820001403</updated>
+    </task>
+    <option name="localTasksCounter" value="34" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -430,8 +408,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Har erstattet arrays med arraylist og tilføjet System.exit(0) for at lukke programmet" />
-    <MESSAGE value="Har fjernet n fra database og andre små ting der bruges til array som ikke bruges mere" />
     <MESSAGE value="Startet på case 2" />
     <MESSAGE value="Har tilføjet UserInterface og skal til at omkode mine metoder. Starter med at searchForHero skal returnere en superhero objekt og ikke printer" />
     <MESSAGE value="Har omkokdet SearchFOrHero og tilføjet searchForHeroList. FLyttet menuen til UserInterface. Starter på at omkode createAndAddHero." />
@@ -452,10 +428,12 @@
     <MESSAGE value="User story #12" />
     <MESSAGE value="Changes by Asger_studie" />
     <MESSAGE value="Changes by jonat" />
-    <MESSAGE value="Changes by paulk" />
-    <MESSAGE value="User story #13" />
     <MESSAGE value="User Story #13" />
-    <option name="LAST_COMMIT_MESSAGE" value="User Story #13" />
+    <MESSAGE value="User story #13" />
+    <MESSAGE value="User Sotry #14" />
+    <MESSAGE value="Changes by paulk" />
+    <MESSAGE value="User Story #14" />
+    <option name="LAST_COMMIT_MESSAGE" value="User Story #14" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

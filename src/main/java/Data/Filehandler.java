@@ -35,7 +35,7 @@ public class Filehandler {
         try {
             PrintStream out = new PrintStream(new File("SuperHeroDatabase.csv"));
             for (SuperHero s : list) {
-                out.println(s);
+                out.println(s.toFile());
             }
         } catch (IOException e) {
             System.out.println(e.getMessage());
