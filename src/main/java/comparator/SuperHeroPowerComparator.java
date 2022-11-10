@@ -1,5 +1,5 @@
-package Comparator;
-import Data.SuperHero;
+package comparator;
+import domain.SuperHero;
 import java.util.Comparator;
 public class SuperHeroPowerComparator implements Comparator<SuperHero> {
 

@@ -1,6 +1,8 @@
-package Data;
-import Comparator.*;
+package domain;
+import comparator.*;
+import domain.SuperHero;
 
+import java.net.http.WebSocketHandshakeException;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
@@ -27,9 +29,6 @@ public class Database {
         heroDatabase.add(new SuperHero(name, superheroName, superheroPower, human, creationYear));
     }
 
-    public void addToDatabase(String name, String superheroPower, boolean human, int creationYear) {
-        heroDatabase.add(new SuperHero(name, superheroPower, human, creationYear));
-    }
 
     //Samler en gruppe af helte, når man skal gemme resultater. Bruges til når der skal redigeres.
     public ArrayList<SuperHero> searchForHeroList(String searchName) {
@@ -116,9 +115,11 @@ public class Database {
             case 4 -> comparator2 = new HumanComparator();
             case 5 -> comparator2 = new CreationYearComparator();
         }
-
-        Collections.sort(sortedlist, comparator1.thenComparing(comparator2));
-
+            if(!comparator1.getClass().equals(comparator2.getClass()))
+            Collections.sort(sortedlist, comparator1.thenComparing(comparator2));
+            else{
+               throw new IllegalArgumentException();
+            }
         return sortedlist;
     }
 

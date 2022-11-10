@@ -1,12 +1,8 @@
-package Controller;
+package domain;
 
-import Data.SuperHero;
-import Data.Database;
-import Data.Filehandler;
+import dataSource.Filehandler;
 
-import java.io.IOException;
 import java.util.ArrayList;
-import java.util.logging.FileHandler;
 
 public class Controller {
 
@@ -18,12 +14,9 @@ public class Controller {
         f = new Filehandler();
     }
 
-    public void createAndAddHero(String name, String heroName, String heroPower, boolean isHuman, int year) {
+    public void createHero(String name, String heroName, String heroPower, boolean isHuman, int year) {
         database.addToDatabase(name, heroName, heroPower, isHuman, year);
-    }
-
-    public void createAndAddHero(String name, String heroPower, boolean isHuman, int year) {
-        database.addToDatabase(name, heroPower, isHuman, year);
+        f.writeToFile(database.getHeroDatabase());
     }
 
     public ArrayList<SuperHero> getHeroDatabase(){
@@ -37,16 +30,8 @@ public class Controller {
 
     public void deleteHero(int heroToDelete){
         database.deleteHero(heroToDelete);
+        f.writeToFile(database.getHeroDatabase());
     }
-
-    public ArrayList<SuperHero> readFile() {
-        return f.readFile();
-    }
-
-    public void writeToFile(ArrayList<SuperHero> list) {
-        f.writeToFile(list);
-    }
-
 
     public void initialLoad(){
         database.setHeroDatabase(f.readFile());
@@ -75,8 +60,6 @@ public class Controller {
     public ArrayList<SuperHero> sortByPrimarySecondary(int valg1, int valg2){
         return database.sortByPrimarySecondary(valg1, valg2);
     }
-
-
 
 }
 

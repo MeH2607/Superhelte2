@@ -1,7 +1,7 @@
-package Comparator;
+package comparator;
 
-import Data.Database;
-import Data.SuperHero;
+import domain.Database;
+import domain.SuperHero;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -20,7 +20,7 @@ class HeroNameComparatorTest {
                 "Spider stuff", true, 1962);
         SuperHero testHero2 = new SuperHero("Clark Kent", "Superman",
                 "Super strength, flight, lasers, shit what doesn't he have", false, 1938);
-        SuperHero testHero3 = new SuperHero("Johnny",
+        SuperHero testHero3 = new SuperHero("Johnny",null,
                 "Cool", true, 2000);
         SuperHero testHero4 = new SuperHero("Bruce Wayne", "Batman",
                 "Money", true, 1939);
@@ -49,7 +49,7 @@ class HeroNameComparatorTest {
     @Test
     void compareWithNull() {
         SuperHero hero1 = db.getHeroDatabase().get(2);
-        SuperHero hero2 = new SuperHero("Johnny",
+        SuperHero hero2 = new SuperHero("Johnny",null,
                 "Cool", true, 2000);
         int i = 0;
         if(hero1.getSuperheroName() == null){
@@ -68,7 +68,7 @@ class HeroNameComparatorTest {
     void compareWithLowercase() {
         SuperHero hero1 = db.getHeroDatabase().get(2);
         SuperHero hero2 = new SuperHero("adam",
-                "Cool", true, 2000);
+                "Cool",null, true, 2000);
         int i = 0;
         if(hero1.getSuperheroName() == null){
             //return null == hero2.getSuperheroName() ? 0 : 1; //Denne metode fandt jeg online https://www.benchresources.net/java-8-how-to-sort-list-and-arrays-with-null-values/

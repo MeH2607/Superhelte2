@@ -1,5 +1,5 @@
-package Comparator;
-import Data.SuperHero;
+package comparator;
+import domain.SuperHero;
 import java.util.Comparator;
 public class CreationYearComparator implements Comparator<SuperHero> {
     public int compare(SuperHero hero1, SuperHero hero2) {

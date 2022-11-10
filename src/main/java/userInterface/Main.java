@@ -1,6 +1,6 @@
-package MainAndUI;
+package userInterface;
 
-import java.util.Scanner;
+import userInterface.UserInterface;
 
 public class Main {
 

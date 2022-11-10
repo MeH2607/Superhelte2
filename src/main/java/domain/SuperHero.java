@@ -18,13 +18,7 @@ public class SuperHero{
         this.creationYear = creationYear;
     }
 
-    public SuperHero(String name, String superheroPower, boolean human, int creationYear) {
-        this.name = name;
-        superheroName = null;
-        this.superheroPower = superheroPower;
-        this.human = human;
-        this.creationYear = creationYear;
-    }
+
 
     public String getName() {
         return name;
@@ -76,9 +70,6 @@ public class SuperHero{
         }
     }
 
-    public String toFile(){
-        return name + ", " + superheroName + ", " +  superheroPower + ", " +  human + ", " + creationYear;
-    }
 
     @Override
     public String toString() {

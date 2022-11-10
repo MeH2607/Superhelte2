@@ -1,7 +1,7 @@
-package MainAndUI;
+package userInterface;
 
-import Controller.Controller;
-import Data.SuperHero;
+import domain.Controller;
+import domain.SuperHero;
 
 import java.util.ArrayList;
 import java.util.Scanner;
@@ -9,9 +9,6 @@ import java.util.Scanner;
 public class UserInterface {
     private Scanner sc = new Scanner(System.in);
     private Controller controller = new Controller();
-
-    //TODO lav lokale arraylister i hjælpe metoderne, så man ikke henter databasen flere gange
-    // hvis databasen ikke er tom.
 
 
     public void startProgram() {
@@ -21,38 +18,28 @@ public class UserInterface {
 
         System.out.println("Velkommen til Superhelte databasen\n");
         do {
-            System.out.println("""
-                                        
-                    Hvad vil du gøre?
-                    1. Opret superhelt
-                    2. Vis alle helte
-                    3. Søg på helte
-                    4. Rediger helte info
-                    5. Slet helt
-                    6. Sorter 
-                    9. afslut
-                    """);
+            menuPrint();
 
             menuValg = readInt();
 
             switch (menuValg) {
-                case 1 -> createAndAddHeroLocalMethod();
-                case 2 -> showAllHeroesLocalMethod();
-                case 3 -> findHeroListLocalMethod();
-                case 4 -> editHeroLocalMethod();
-                case 5 -> deleteHeroLocalMethod();
+                case 1 -> createHero();
+                case 2 -> showAllHeroes();
+                case 3 -> findHeroList();
+                case 4 -> editHero();
+                case 5 -> deleteHero();
                 case 6 -> sortingMenu();
-                case 9 -> {
-                    System.out.println("\nPå gensyn");
-                    System.exit(0);
-                }
+                case 9 -> System.out.println("\nPå gensyn");
                 default -> System.out.println("Ugyldigt valg");
             }
         } while (menuValg != 9);
+        takMohamed();
+        //Useless (tak Mohamed)
+        System.exit(0);
     }
 
 
-    private void createAndAddHeroLocalMethod() {
+    private void createHero() {
         System.out.println("* Tilføj en superhelt *");
 
         System.out.println("\nTilføj deres civil navn: ");
@@ -62,10 +49,19 @@ public class UserInterface {
         int svar = sc.nextInt();
         sc.nextLine(); //Til scannerbug
         String heroName = null;
-        if (svar == 1) {
-            System.out.println("\nTilføj deres heltenavn: ");
-            heroName = sc.nextLine();
-        }
+        do {
+            switch (svar) {
+                case 1:
+                    System.out.println("\nTilføj deres heltenavn: ");
+                    heroName = sc.nextLine();
+                    break;
+                case 2:
+                    heroName = null;
+                    break;
+                default:
+                    System.out.println("Ugyldig input");
+            }
+        } while (svar != 1 || svar != 2);
 
         System.out.println("\nTilføj deres superstyrke: ");
         String heroPower = sc.nextLine();
@@ -89,66 +85,52 @@ public class UserInterface {
         System.out.println("\nHvornår blev de lavet: ");
         int year = readInt();
 
-        //Tjekker om de har et superheltenavn og opretter så hero objekter
-        if (heroName == null) {
-            controller.createAndAddHero(name, heroPower, isHuman, year);
-            controller.writeToFile(controller.getHeroDatabase());
-            System.out.println("\nDu har tilføjet " + name + " til databasen.\n");
-        } else {
-            controller.createAndAddHero(name, heroName, heroPower, isHuman, year);
-            controller.writeToFile(controller.getHeroDatabase());
-            System.out.println("\nDu har tilføjet " + name + " også kendt som " + heroName + " til databasen.\n");
-        }
+        controller.createHero(name, heroName, heroPower, isHuman, year);
+        System.out.println("\nDu har tilføjet " + name + " til databasen.\n");
+
     }
 
-    private void showAllHeroesLocalMethod() {
+    private void showAllHeroes() {
 
         ArrayList<SuperHero> list = controller.getHeroDatabase();
 
         if (list.isEmpty()) {
             System.out.println("Ingen helte i databasen");
         } else {
-        listHeader();
-        for (SuperHero h : list) {
-            System.out.println(h);
+            listHeader();
+            for (SuperHero hero : list) {
+                System.out.println(formatPrint(hero));
             }
         }
     }
 
-    private void findHeroListLocalMethod() {
+    private void findHeroList() {
         String searchName;
         System.out.println("* Søg efter Superhelt *");
         searchName = sc.nextLine();
         ArrayList<SuperHero> localHeroList = controller.searchForHeroList(searchName);
 
-        for (SuperHero h : localHeroList) {
-            if (h != null) {
-                String name = h.getName();
+        for (SuperHero hero : localHeroList) {
+            if (hero != null) {
+                String name = hero.getName();
                 String superHeroName = " ";
                 String isHuman = " ";
-                String superStyrke = h.getSuperheroPower();
-                int creationYear = h.getCreationYear();
+                String superStyrke = hero.getSuperheroPower();
+                int creationYear = hero.getCreationYear();
 
-                if (h.getSuperheroName() == null) {
+                if (hero.getSuperheroName() == null) {
                     superHeroName = "Intet heltenavn";
                 } else {
-                    superHeroName = h.getSuperheroName();
+                    superHeroName = hero.getSuperheroName();
                 }
 
-                if (h.getIsHuman() == true) {
+                if (hero.getIsHuman() == true) {
                     isHuman = "Ja";
                 } else {
                     isHuman = "Nej";
                 }
 
-                System.out.printf("""
-                        Civilnavn: %s
-                        Superheltenavn: %s
-                        Menneske?: %s
-                        Superstyrke: %s
-                        Oprindelsesår: %d
-                                                
-                        """, name, superHeroName, isHuman, superStyrke, creationYear);
+                System.out.println(formatPrint(hero));
 
             }
         }
@@ -157,7 +139,7 @@ public class UserInterface {
         }
     }
 
-    private void editHeroLocalMethod() {
+    private void editHero() {
         //If løkken sender en besked hvis listen er tom
         ArrayList<SuperHero> localHeroList = controller.getHeroDatabase();
         if (localHeroList.isEmpty()) {
@@ -244,7 +226,7 @@ public class UserInterface {
         }
     }
 
-    private void deleteHeroLocalMethod() {
+    private void deleteHero() {
         //If løkken sender en besked hvis listen er tom
         ArrayList<SuperHero> localHeroList = controller.getHeroDatabase();
         if (localHeroList.isEmpty()) {
@@ -291,35 +273,35 @@ public class UserInterface {
     public void sortByNameLocalMethod() {
         listHeader();
         for (SuperHero hero : controller.sortByName()) {
-            System.out.println(hero.toString());
+            System.out.println(formatPrint(hero));
         }
     }
 
     public void sortByHeroPowerLocalMethod() {
         listHeader();
         for (SuperHero hero : controller.sortBySuperHeroPower()) {
-            System.out.println(hero.toString());
+            System.out.println(formatPrint(hero));
         }
     }
 
     public void sortByYearLocalMethod() {
         listHeader();
         for (SuperHero hero : controller.sortByCreationYear()) {
-            System.out.println(hero.toString());
+            System.out.println(formatPrint(hero));
         }
     }
 
     public void sortByIsHumanLocalMethod() {
         listHeader();
         for (SuperHero hero : controller.sortByHuman()) {
-            System.out.println(hero.toString());
+            System.out.println(formatPrint(hero));
         }
     }
 
     public void sortByHeroNameLocalMethod() {
         listHeader();
         for (SuperHero hero : controller.sortByHeroName()) {
-            System.out.println(hero.toString());
+            System.out.println(formatPrint(hero));
         }
     }
 
@@ -365,8 +347,15 @@ public class UserInterface {
             default -> System.out.println("Ugyldig input");
         }
         listHeader();
-        for (SuperHero hero : controller.sortByPrimarySecondary(valg1, valg2)) {
-            System.out.println(hero.toString());
+        ArrayList<SuperHero> sortedList = new ArrayList<>();
+        try{
+        sortedList = controller.sortByPrimarySecondary(valg1, valg2);}
+        catch (IllegalArgumentException e){
+            System.out.println("Du må ikke vælge det samme sorteringskriterie 2 gange.");
+        }
+        listHeader();
+        for (SuperHero hero : sortedList) {
+            System.out.println(formatPrint(hero));
         }
     }
 
@@ -374,14 +363,14 @@ public class UserInterface {
         int menuValg = 0;
 
 
-        System.out.println("Vælg primære sorteringskriterie\n");
+        System.out.println("Vælg sorteringskriterie\n");
         System.out.println("""
                 1. Navn
                 2. Heltenavn
                 3. Superkraft
                 4. Er menneske
                 5. Oprindelses år
-                6. sorter mellem primær og sekundær
+                6. sorter mellem både primær og sekundær
                 9. afslut
                 """);
         menuValg = readInt();
@@ -392,14 +381,70 @@ public class UserInterface {
             case 4 -> sortByIsHumanLocalMethod();
             case 5 -> sortByYearLocalMethod();
             case 6 -> sortByPrimarySecondaryMethod();
-            default -> System.out.println("Ugyldig input");
+            default -> {
+                System.out.println("Ugyldig input");
+                sortingMenu();
+            }
         }
     }
 
     private void listHeader() {
         System.out.printf("┃ %-20s │ %-15s │ %-20s │ %-8s │ %-13s ┃ %n", "name", "superheroName", "superheroPower", "Is human", "creationYear");
     }
+
+    private void menuPrint() {
+        System.out.println("""
+                                    
+                Hvad vil du gøre?
+                1. Opret superhelt
+                2. Vis alle helte
+                3. Søg på helte
+                4. Rediger helte info
+                5. Slet helt
+                6. Sorter 
+                9. afslut
+                """);
+    }
+
+    private String formatPrint(SuperHero hero) {
+        return String.format("┃ %-20s │ %-15s │ %-20s │ %-8b │ %-13d ┃", hero.getName(), hero.getSuperheroName(),hero.getSuperheroPower(), hero.getIsHuman(), hero.getCreationYear());
+    }
+
+    private void takMohamed() {
+        System.out.println("""
+                                
+                THANKS MOHAMED
+                ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣠⣤⣶⣶⣿⣿⣷⣶⣦⣤⣀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣀⣠⣄⣀⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+                ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣴⣶⠿⠟⠋⠉⠁⠀⠀⠀⠀⠉⠙⠻⣷⣦⣄⢀⣀⣤⣶⡾⠿⠿⠟⠛⠛⠻⠿⣷⣦⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+                ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣠⣾⡿⠋⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠙⢿⣿⡛⠉⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠙⢿⣦⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+                ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣾⡿⠋⠀⠀⠀⠀⢀⣠⣶⣶⣶⣶⣶⣶⣶⣶⣦⣤⣀⠀⢻⣷⡄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢿⣷⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+                ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣾⡟⠁⠀⠀⢠⣴⣿⠟⠛⠉⠀⠀⠀⠀⠀⠀⠀⠉⠙⠛⢿⣶⣿⣧⣤⣤⣶⣶⣿⣿⡿⢿⣿⣿⣶⣶⣴⣿⣆⣀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+                ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣾⡿⠁⠀⠀⠀⠘⠋⠀⠀⠀⠀⠀⠀⠀⠀⣀⣠⣤⣤⣴⣶⣶⣶⣿⣿⣧⣀⠀⠀⠀⢀⣤⣤⣤⣤⣴⣦⣼⣿⣿⣿⣿⣷⣤⣀⠀⠀⠀⠀⠀
+                ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣾⡿⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣀⣤⣶⡿⠿⣛⣩⣭⣿⣿⣿⣿⣭⣭⣙⣿⣷⡄⠀⠈⠻⣏⣉⣹⣽⣿⣿⣭⣿⣯⣭⣉⣙⢻⣷⡄⠀⠀⠀
+                ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣀⣴⡿⠟⠀⠀⠀⠀⠀⠀⠀⠀⣠⣴⣾⠿⣟⣩⣷⣶⠿⠟⠋⠉⠉⠁⠀⠉⢉⣉⣉⣛⣿⣿⣶⠾⠿⠿⠛⢛⣉⣍⣭⣉⣍⣉⣉⣛⣻⢿⣿⣇⠀⠀⠀
+                ⠀⠀⠀⠀⠀⠀⠀⢀⣴⣿⠟⠋⠀⠀⠀⠀⠀⠀⠀⠀⣠⣶⣿⣭⣶⡿⠟⠋⠉⠀⠀⢀⣀⣤⣴⣶⣿⣾⣿⠿⠟⠛⠿⣿⣿⣤⣤⣶⣶⡿⠿⢿⣿⣿⣿⣿⣟⠛⠻⠿⢿⣿⣷⡀⠀
+                ⠀⠀⠀⠀⠀⠀⢀⣾⡿⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠘⢿⣷⣬⣿⣥⣤⣤⣤⣤⣶⣿⠿⣿⣿⠛⢿⣿⣿⣿⣦⡀⠀⠀⣸⡿⠛⠉⠁⠀⠀⣠⣿⣇⣀⡿⠿⣿⣷⡄⠀⠀⢸⣿⡇⠀
+                ⠀⠀⠀⠀⠀⢀⣾⡿⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠉⣻⣿⣿⣯⣅⡀⠀⢠⣿⣿⠖⢾⣿⡀⣨⣿⣧⣤⣼⣿⣧⣤⣀⣀⠀⢀⣿⣿⡛⣿⣧⣀⣿⣿⣧⣤⣶⣿⠏⠀⠐
+                ⠀⠀⠀⠀⣰⣿⠟⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠻⢿⣶⣭⣟⡿⠿⣿⣿⣿⣿⡿⡿⣿⢿⣿⣿⣯⣽⡿⠉⠙⠛⠿⠿⠿⠿⠿⠿⠿⠿⠿⠿⠟⣿⣿⠿⠃⠀⠀⠀
+                ⠀⠀⠀⣰⣿⠏⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠉⠛⠿⠿⠾⠿⠿⠾⠿⠿⣿⣿⣿⡿⠋⠉⠁⣤⣄⠀⠀⠀⠀⠀⠀⠀⠀⠀⣀⣠⣾⡿⠃⠀⠀⠀⠀⠀
+                ⠀⢀⣼⡿⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣀⣤⣴⣾⠿⠋⠁⠀⠀⠀⠀⠻⠿⢿⣶⣶⣶⣶⣶⣶⠾⣿⣿⡋⠉⠀⠀⠀⠀⠀⠀⠀
+                ⠀⣼⡟⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢿⠿⠛⠛⠉⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠻⣿⣦⠀⠀⠀⠈⠻⣷⣄⠀⠀⠀⠀⠀⠀⠀
+                ⢸⣿⠃⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠁⠀⠀⠀⠀⠀⠙⢿⣦⠀⠀⠀⠀⠀⠀
+                ⢸⣿⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡀⣀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⣿⣆⠀⠀⠀⠀⠀
+                ⠘⣿⡆⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣤⣶⣿⠿⠿⠿⠿⠿⠿⠿⢿⣷⣶⣦⣤⣀⣀⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣀⣀⣀⣠⣤⣶⣿⠿⠿⢿⣧⠀⠀⠀⠀
+                ⠀⢹⣿⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢠⣿⡏⠉⠀⣤⣤⣤⣤⣤⣄⣀⣀⣀⠉⠉⠉⠛⠛⠿⠿⠿⠶⠶⠶⠶⠶⠶⠾⠿⠿⠿⠟⠛⠛⠉⠉⠁⠀⠀⢀⣼⡿⠀⠀⠀⠀
+                ⠀⠈⢿⣧⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⠘⣿⣇⠀⠀⠹⠉⠉⠉⡉⠙⠛⠻⠿⢿⣶⣶⣶⣶⣤⣤⣄⣀⣀⣀⣀⣀⣀⣀⣀⣀⣀⣀⣀⣀⣤⣤⣴⣶⣶⡿⠟⠁⠀⠀⠀⠀
+                ⠀⠀⠈⢿⣷⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣿⡇⠘⢿⣷⣤⣶⣶⡿⠿⠿⢿⣿⣶⣦⣤⣤⣤⣈⣉⠙⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠉⠉⢈⣿⠆⠀⠀⠀⠀⠀⠀
+                ⠀⠀⠀⠈⠻⣿⣤⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠙⢿⣦⣤⣤⡄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠉⠛⠛⠛⠛⠿⠿⢿⣿⣷⣶⣶⣶⣤⣤⣤⣤⣤⣤⣤⣤⣤⣶⡿⠛⠀⠀⠀⠀⠀⠀⠀
+                ⠀⠀⠀⠀⠀⠈⠻⣿⣷⣤⣄⣀⠀⠀⠀⠀⠀⠀⠀⠈⠉⠛⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⣩⣽⡿⠋⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+                ⠀⠀⠀⠀⠀⠀⠀⠙⠿⢿⣿⣿⣿⣶⣶⣤⣄⣀⣀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣀⣀⣠⣶⣾⠟⠉⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+                ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠉⠉⠛⠿⢿⣿⣯⣟⣻⣿⠿⠷⠶⣶⣶⣶⣶⣶⣶⣶⣶⣶⣶⣶⣶⣶⣶⣶⣶⡶⣶⣿⣿⡿⠟⠛⠉⠉⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+                ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠉⠙⠛⠻⠿⢷⣶⣶⣶⣶⣶⣤⣤⣤⣤⣤⣤⣤⣤⣤⣤⣴⣶⣶⡿⠟⠉⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+                ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠉⠉⠉⠉⠉⠛⠛⠛⠉⠉⠉⠉⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+                """);
+    }
 }
+
 
 
 

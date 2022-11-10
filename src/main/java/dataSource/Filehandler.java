@@ -1,5 +1,5 @@
-package Data;
-
+package dataSource;
+import domain.SuperHero;
 import java.io.File;
 import java.io.IOException;
 import java.io.PrintStream;
@@ -12,12 +12,12 @@ public class Filehandler {
     public ArrayList<SuperHero> readFile() {
         ArrayList<SuperHero> heroListFile = new ArrayList<SuperHero>();
         try {
-            Scanner sc = new Scanner(new File("SuperHeroDatabase.csv"));
-
+            Scanner sc = new Scanner(filename);
+            SuperHero s;
             while (sc.hasNextLine()) {
                 String linje = sc.nextLine();
                 String[] attributes = linje.split(",");
-                SuperHero s = new SuperHero(
+                 s = new SuperHero(
                         attributes[0],
                         heroNameToNull(attributes[1]),
                         attributes[2],
