@@ -4,15 +4,34 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c3f9186f-b8e2-45ab-9d3b-f48aab031d63" name="Changes" comment="User story #14">
+    <list default="true" id="c3f9186f-b8e2-45ab-9d3b-f48aab031d63" name="Changes" comment="Lavet toFile() så toString ikke overskriver csv">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SuperHeroDatabase.csv" beforeDir="false" afterPath="$PROJECT_DIR$/SuperHeroDatabase.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Data/Filehandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Data/Filehandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Data/SuperHero.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Data/SuperHero.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Comparator/CreationYearComparator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/comparator/CreationYearComparator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Comparator/HeroNameComparator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/comparator/HeroNameComparator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Comparator/HumanComparator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/comparator/HumanComparator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Comparator/NameComparator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/comparator/NameComparator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Comparator/PrimarySecondaryComparator.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Comparator/SuperHeroPowerComparator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/comparator/SuperHeroPowerComparator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Controller/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/domain/Controller.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Data/Database.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/domain/Database.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Data/Filehandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dataSource/Filehandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Data/SuperHero.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/domain/SuperHero.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/MainAndUI/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/userInterface/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/MainAndUI/UserInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/userInterface/UserInterface.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/Comparator/HeroNameComparatorTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/comparator/HeroNameComparatorTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/DatabaseTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/DatabaseTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/FilehandlerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/FilehandlerTest.java" afterDir="false" />
     </list>
-    <list id="6dc2d6b3-1fdb-4375-bc5a-5e65abb95af1" name="Changes by Asger_studie" comment="User story #13" />
-    <list id="5d361159-9af2-4190-a5f2-8b3b631e9cc8" name="Changes by jonat" comment="User Sotry #14" />
-    <list id="a5b44129-72c5-4db7-9c4e-55f96e26d9de" name="Changes by paulk" comment="User Story #14" />
+    <list id="6dc381e3-aa83-49ed-a790-760b2ea5cba5" name="Changes by Asger_studie" comment="">
+      <change beforePath="$PROJECT_DIR$/src/test/java/FilehandlerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/FilehandlerTest.java" afterDir="false" />
+    </list>
+    <list id="5d361159-9af2-4190-a5f2-8b3b631e9cc8" name="Changes by jonat" comment="User Sotry #14">
+      <change beforePath="$PROJECT_DIR$/src/main/java/Data/SuperHero.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/domain/SuperHero.java" afterDir="false" />
+    </list>
+    <list id="a5b44129-72c5-4db7-9c4e-55f96e26d9de" name="Changes by paulk" comment="User Story #14">
+      <change beforePath="$PROJECT_DIR$/src/main/java/Data/Filehandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dataSource/Filehandler.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -28,6 +47,34 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="LineStatusTrackerManager">
+    <file path="$PROJECT_DIR$/src/main/java/dataSource/Filehandler.java">
+      <ranges>
+        <range start1="0" end1="2" start2="0" end2="2" changelist="c3f9186f-b8e2-45ab-9d3b-f48aab031d63" />
+        <range start1="9" end1="9" start2="9" end2="11" changelist="a5b44129-72c5-4db7-9c4e-55f96e26d9de" />
+        <range start1="14" end1="16" start2="16" end2="18" changelist="c3f9186f-b8e2-45ab-9d3b-f48aab031d63" />
+        <range start1="19" end1="20" start2="21" end2="22" changelist="c3f9186f-b8e2-45ab-9d3b-f48aab031d63" />
+        <range start1="35" end1="36" start2="37" end2="38" changelist="a5b44129-72c5-4db7-9c4e-55f96e26d9de" />
+        <range start1="37" end1="38" start2="39" end2="40" changelist="a5b44129-72c5-4db7-9c4e-55f96e26d9de" />
+      </ranges>
+    </file>
+    <file path="$PROJECT_DIR$/src/main/java/domain/SuperHero.java">
+      <ranges>
+        <range start1="0" end1="4" start2="0" end2="1" changelist="5d361159-9af2-4190-a5f2-8b3b631e9cc8" />
+        <range start1="20" end1="27" start2="17" end2="18" changelist="c3f9186f-b8e2-45ab-9d3b-f48aab031d63" />
+        <range start1="78" end1="81" start2="69" end2="69" changelist="c3f9186f-b8e2-45ab-9d3b-f48aab031d63" />
+        <range start1="89" end1="90" start2="77" end2="77" changelist="5d361159-9af2-4190-a5f2-8b3b631e9cc8" />
+      </ranges>
+    </file>
+    <file path="$PROJECT_DIR$/src/test/java/FilehandlerTest.java">
+      <ranges>
+        <range start1="0" end1="2" start2="0" end2="2" changelist="c3f9186f-b8e2-45ab-9d3b-f48aab031d63" />
+        <range start1="29" end1="32" start2="29" end2="30" changelist="c3f9186f-b8e2-45ab-9d3b-f48aab031d63" />
+        <range start1="33" end1="34" start2="31" end2="32" changelist="6dc381e3-aa83-49ed-a790-760b2ea5cba5" />
+        <range start1="37" end1="38" start2="35" end2="36" changelist="c3f9186f-b8e2-45ab-9d3b-f48aab031d63" />
+      </ranges>
+    </file>
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -63,7 +110,7 @@
     "project.structure.proportion": "0.0",
     "project.structure.side.proportion": "0.0",
     "run.code.analysis.last.selected.profile": "pProject Default",
-    "settings.editor.selected.configurable": "preferences.lookFeel"
+    "settings.editor.selected.configurable": "preferences.pluginManager"
   }
 }]]></component>
   <component name="RecentsManager">
@@ -75,20 +122,13 @@
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.MainAndUI.Main">
-    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Main" />
-      <module name="SuperhelteProjekt" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="MainAndUI.Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="MainAndUI.Main" />
+  <component name="RunManager" selected="JUnit.DatabaseTest.primarySecondarySortingSameComparator">
+    <configuration name="userInterface.Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="userInterface.Main" />
       <module name="SuperhelteProjekt" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="MainAndUI.*" />
+          <option name="PATTERN" value="userInterface.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -96,37 +136,41 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="DatabaseTest.sortByHeroNameTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="DatabaseTest.primaryAndSecondaryNotTheSame" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="SuperhelteProjekt" />
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="DatabaseTest" />
-      <option name="METHOD_NAME" value="sortByHeroNameTest" />
+      <option name="METHOD_NAME" value="primaryAndSecondaryNotTheSame" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="FilehandlerTest.readSuperHeroesFromFile" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="DatabaseTest.primaryAndSecondaryTheSame" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="SuperhelteProjekt" />
       <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="FilehandlerTest" />
-      <option name="METHOD_NAME" value="readSuperHeroesFromFile" />
+      <option name="MAIN_CLASS_NAME" value="DatabaseTest" />
+      <option name="METHOD_NAME" value="primaryAndSecondaryTheSame" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="HeroNameComparatorTest.compareWithoutNull" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="DatabaseTest.primarySecondarySorting" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="SuperhelteProjekt" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="Comparator.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="Comparator" />
-      <option name="MAIN_CLASS_NAME" value="Comparator.HeroNameComparatorTest" />
-      <option name="METHOD_NAME" value="compareWithoutNull" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="DatabaseTest" />
+      <option name="METHOD_NAME" value="primarySecondarySorting" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="DatabaseTest.primarySecondarySortingSameComparator" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="SuperhelteProjekt" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="DatabaseTest" />
+      <option name="METHOD_NAME" value="primarySecondarySortingSameComparator" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -134,11 +178,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.MainAndUI.Main" />
-        <item itemvalue="Application.Main" />
-        <item itemvalue="JUnit.HeroNameComparatorTest.compareWithoutNull" />
-        <item itemvalue="JUnit.DatabaseTest.sortByHeroNameTest" />
-        <item itemvalue="JUnit.FilehandlerTest.readSuperHeroesFromFile" />
+        <item itemvalue="JUnit.DatabaseTest.primarySecondarySortingSameComparator" />
+        <item itemvalue="JUnit.DatabaseTest.primarySecondarySorting" />
+        <item itemvalue="Application.userInterface.Main" />
+        <item itemvalue="JUnit.DatabaseTest.primaryAndSecondaryNotTheSame" />
+        <item itemvalue="JUnit.DatabaseTest.primaryAndSecondaryTheSame" />
       </list>
     </recent_temporary>
   </component>
@@ -390,7 +434,28 @@
       <option name="project" value="LOCAL" />
       <updated>1667820001403</updated>
     </task>
-    <option name="localTasksCounter" value="34" />
+    <task id="LOCAL-00034" summary="Lavet toFile() så toString ikke overskriver csv">
+      <created>1667907874646</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1667907874646</updated>
+    </task>
+    <task id="LOCAL-00035" summary="Lavet toFile() så toString ikke overskriver csv">
+      <created>1667908060340</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1667908060340</updated>
+    </task>
+    <task id="LOCAL-00036" summary="Lavet toFile() så toString ikke overskriver csv">
+      <created>1667908085047</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1667908085047</updated>
+    </task>
+    <option name="localTasksCounter" value="37" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -408,7 +473,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Startet på case 2" />
     <MESSAGE value="Har tilføjet UserInterface og skal til at omkode mine metoder. Starter med at searchForHero skal returnere en superhero objekt og ikke printer" />
     <MESSAGE value="Har omkokdet SearchFOrHero og tilføjet searchForHeroList. FLyttet menuen til UserInterface. Starter på at omkode createAndAddHero." />
     <MESSAGE value="Græder over at findHero printer det samme objekt flere gange når man eks. søger &quot;man&quot;" />
@@ -433,21 +497,7 @@
     <MESSAGE value="User Sotry #14" />
     <MESSAGE value="Changes by paulk" />
     <MESSAGE value="User Story #14" />
-    <option name="LAST_COMMIT_MESSAGE" value="User Story #14" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-method">
-          <url>file://$PROJECT_DIR$/src/test/java/FilehandlerTest.java</url>
-          <line>53</line>
-          <properties class="FilehandlerTest">
-            <option name="EMULATED" value="true" />
-            <option name="WATCH_EXIT" value="false" />
-          </properties>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+    <MESSAGE value="Lavet toFile() så toString ikke overskriver csv" />
+    <option name="LAST_COMMIT_MESSAGE" value="Lavet toFile() så toString ikke overskriver csv" />
   </component>
 </project>

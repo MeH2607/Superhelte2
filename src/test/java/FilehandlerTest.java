@@ -1,5 +1,5 @@
-import Data.Database;
-import Data.SuperHero;
+import domain.Database;
+import domain.SuperHero;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -27,15 +27,13 @@ class FilehandlerTest {
                 "Spider stuff", true, 1962);
         SuperHero testHero2 = new SuperHero("Clark Kent", "Superman",
                 "Super everything", false, 1938);
-       /* Data.SuperHero testHero3 = new Data.SuperHero("Johnny",
-                "Cool as shit", true, 2000);*/
-        SuperHero testHero4 = new SuperHero("Bruce Wayne", "Batman",
+        SuperHero testHero3 = new SuperHero("Bruce Wayne", "Batman",
                 "Money", true, 1939);
-        SuperHero testHero5 = new SuperHero("Groot",
+        SuperHero testHero4 = new SuperHero("Groot", null,
                 "Strong tree", false, 2014);
 
         //indsætter til databasen
-        db.getHeroDatabase().addAll(Arrays.asList(testHero1, testHero2,/* testHero3,*/ testHero4, testHero5));
+        db.getHeroDatabase().addAll(Arrays.asList(testHero1, testHero2, testHero3, testHero4));
 
         {
             try {
